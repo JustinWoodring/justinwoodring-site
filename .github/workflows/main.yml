@@ -10,7 +10,7 @@ jobs:
       - name: Zola Build
         run: | 
           sudo snap install --edge zola
-          zola build .
+          zola build
       - name: Deploy
         env: 
           JUSTINWOODRING_WEBSITE_SSH_KEY: ${{ secrets.JUSTINWOODRING_USER_SSH_KEY }}

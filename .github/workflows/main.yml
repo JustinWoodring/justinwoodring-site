@@ -22,6 +22,6 @@ jobs:
           mkdir ~/.ssh
           ssh-keyscan -t rsa justinwoodring.com >> ~/.ssh/known_hosts
           cd ..
-          ssh -i ./keys/capibara_website_ssh_key justinwoodring@justinwoodring.com 'bash < /home/justinwoodring/redeploy_script.sh'
-          scp -i ./keys/capibara_website_ssh_key -r public justinwoodring@justinwoodring.com:public
+          ssh -i ./keys/justinwoodring_website_ssh_key justinwoodring@justinwoodring.com 'bash < /home/justinwoodring/redeploy_script.sh'
+          scp -i ./keys/justinwoodring_website_ssh_key -r public justinwoodring@justinwoodring.com:public
           echo "All Done"

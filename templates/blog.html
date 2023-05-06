@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block primary_content %}
+<article>
+  <h1 class="title">{{ section.title }}</h1>
+  <ul class="blog-list">
+    <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->
+    {% for page in section.pages %}
+    <li>
+      <a href="{{ page.permalink | safe }}"
+        ><h2>{{ page.title }}</h2>
+        <h4>{{ page.date }}</h4></a
+      >
+    </li>
+    {% endfor %}
+  </ul>
+</article>
+{% endblock primary_content %}

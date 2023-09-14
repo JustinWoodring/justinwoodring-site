@@ -1,4 +1,7 @@
-+++ title = "Project Roomie 3: An undergraduate group project building an improved infrared spectral photometer" date = 2023-09-01 +++
++++ 
+title = "Project Roomie 3: An undergraduate group project building an improved infrared spectral photometer" 
+date = 2023-09-01 
++++
 
 ## Summary
 Project Roomie 3 was an undergraduate physics research project concerned with building an,

@@ -3,6 +3,7 @@ title = "Project Roomie 3: An undergraduate group project building an improved i
 date = 2023-09-01 
 +++
 
+
 ## Summary
 Project Roomie 3 was an undergraduate physics research project concerned with building an,
 "Improved spectral photometer for undergraduate observations of atmospheric infrared heat

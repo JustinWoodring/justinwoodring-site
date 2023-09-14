@@ -1,4 +1,4 @@
-+++ 
++++
 title = "Project Roomie 3: An undergraduate group project building an improved infrared spectral photometer" 
 date = 2023-09-01 
 +++

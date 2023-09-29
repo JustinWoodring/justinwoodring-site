@@ -19,6 +19,7 @@ jobs:
           npx vite build
           mkdir ../qubit-temp
           mv dist/* ../qubit-temp
+          cp assets/qubit-icon.png ../qubit-temp/assets/qubit-icon.png
           cd ..
           rm -r qubit-simulator
           mv qubit-temp qubit-simulator

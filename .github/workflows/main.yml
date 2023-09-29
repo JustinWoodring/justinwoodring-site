@@ -21,7 +21,7 @@ jobs:
           mv dist/* ../qubit-temp
           cd ..
           rm -r qubit-simulator
-          mv -r qubit-temp qubit-simulator
+          mv qubit-temp qubit-simulator
       - name: Zola Build
         run: | 
           sudo snap install --edge zola

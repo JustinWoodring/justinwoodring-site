@@ -7,6 +7,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.8.1
+      - name: Clone and build qubit-simulator
+        run: |
+          cd static
+          git clone https://github.com/JustinWoodring/qubit-simulator
+          cd qubit-simulator
+          npm i
+          npm i vite
+          npx vite build
+          mkdir ../qubit-temp
+          mv dist/* ../qubit-temp
+          cd ..
+          rm -r qubit-simulator
+          mv -r qubit-temp qubit-simulator
       - name: Zola Build
         run: | 
           sudo snap install --edge zola

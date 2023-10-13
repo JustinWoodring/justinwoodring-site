@@ -46,7 +46,6 @@ html,body{
             flex:3;
 
             article {
-                line-height:1.5rem;
 
                 pre {
                     padding:.5rem;
@@ -65,6 +64,11 @@ html,body{
 
                 p {
                     font-family: "Nunito Sans";
+                    line-height:1.5rem;
+                }
+
+                ul {
+                    line-height:1.5rem;
                 }
 
                 ul.box-list {

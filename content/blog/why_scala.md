@@ -4,7 +4,7 @@ date = 2023-10-12
 +++
 
 Scala. The heyday of this language has come and gone. Yet despite a seemingly strong public
-distaste and there is ineffable glimmer to this language. Something about it calls to an
+distaste, there is an ineffable glimmer to this language. Something about it calls to an
 intellectual nature. At face value, it seems as though Scala is just another failed "better java"
 with so many esoteric language constructs that it's difficult to grasp. A lot of people will say
 Kotlin is better. But then again those people might just be wrong.
@@ -12,11 +12,13 @@ Kotlin is better. But then again those people might just be wrong.
 In my opinion, Scala is the most 'powerful' language I've ever come across. The language itself is 
 presented as a mesmerizing clash and harmony between object-oriented and functional paradigms unlike
 anything else I've seen. People who effectively wield this dualistic nature might as well be using the
-"Force" or "One Power" while everyone else is playing with swords. In more grounded terms, Scala for the
-experienced user can quickly be used to solve the most complex problems simply and for inexperienced users
-can lead them down hopelessly winding paths of antipatterns and senseless complexity. But that is it's namesake, 
-Scala, the scalable language. It can be adapted to solve any problem. But its greatest strength is its
-weakness in that it's easy to write horrifically bad code and can take a long time to properly wield.
+"Force" or "One Power" while everyone else is playing with swords. 
+
+In more grounded terms, Scala for the experienced user can quickly be used to solve the most complex
+problems simply and for inexperienced users can lead them down hopelessly winding paths of antipatterns
+and senseless complexity. But that is it's namesake, Scala, the scalable language. It can be adapted
+to solve any problem. But its greatest strength is its weakness in that it's easy to write horrifically
+bad code and can take a long time to properly wield.
 
 Consider this FizzBuzz code:
 ```scala

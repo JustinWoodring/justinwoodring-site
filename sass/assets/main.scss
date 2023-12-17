@@ -1,10 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Oxygen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Oxygen&display=swap');
 
 html,body{
-    font-family: "Oxygen";
-    color:#333;
+    font-family: "IBM Plex Sans";
+    color:#EEE;
     padding:0;
     margin:0;
+}
+
+.content--canvas > canvas{
+    width:0px;
+    height:0px;
+    z-index: -1;
 }
 
 .container {
@@ -12,8 +18,7 @@ html,body{
     margin:auto;
 
     nav {
-        padding:.5rem;
-        border-bottom:2px solid #ccc;
+        padding:.25rem;
 
         a, a:visited {
             text-decoration: none;
@@ -22,7 +27,10 @@ html,body{
 
         .logo {
             text-align: center;
-            font-size: 1.6rem;
+            font-size: 2rem;
+            margin:0em;
+            margin-top: 1rem;
+            margin-bottom: .5rem;
         }
 
         .links {
@@ -46,6 +54,8 @@ html,body{
             flex:3;
 
             article {
+                backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
 
                 pre {
                     padding:.5rem;
@@ -59,11 +69,11 @@ html,body{
                 h4.date {
                     margin-top:-1rem;
                     padding: 0em;
-                    color:#666;
+                    color:#AAA;
                 }
 
                 p {
-                    font-family: "Nunito Sans";
+                    font-family: "IBM Plex Sans";
                     line-height:1.5rem;
                 }
 
@@ -76,6 +86,7 @@ html,body{
                     padding: 0;
                     display: flex;
                     flex-flow: column nowrap;
+                    color: #EEE;
 
                     a {
                         width: 100%;
@@ -92,12 +103,14 @@ html,body{
                             height:3rem;
                             vertical-align: middle;
                             padding:.5rem;
-                            border:1px solid #ccc;
+                            border:1px solid #222;
                             margin-right: .5rem;
+                            color: #EEE;
                         }
                         div.text {
                             display: inline-block;
                             margin:auto 0;
+                            color: #EEE;
 
                             h6 {
                                 padding:0;
@@ -107,11 +120,13 @@ html,body{
 
                         width: initial;
                         font-weight: 700;
-                        box-shadow:1px 1px 3px  #ccc;
-                        border:1px solid #ccc;
+                        box-shadow:1px 1px 3px  #000;
+                        border: 1px solid #222;
                         padding:1em;
                         list-style-type: none;
                         margin-top:1em;
+                        backdrop-filter: blur(5px);
+                        -webkit-backdrop-filter: blur(5px);
                         border-radius: .1rem;    
                     }
                 }
@@ -120,10 +135,12 @@ html,body{
                     margin: 0;
                     padding: 0;
                     list-style-type:none;
+                    backdrop-filter: blur(5px);
+                    -webkit-backdrop-filter: blur(5px);
 
                     a {
                         text-decoration: none;
-                        color:#333
+                        color:#EEE;
                     }
 
                     h2 {
@@ -135,6 +152,10 @@ html,body{
                         padding:0;
                         margin:0;
                         color:#666;
+                    }
+
+                    li{
+                        margin-bottom: 1rem;
                     }
                 }
             }
@@ -179,7 +200,6 @@ html,body{
 
 .footer {
     footer {
-        border-top:2px solid #ccc;
         padding: 2em 0em 2em 0em;
         font-size: smaller;
         text-align: center;

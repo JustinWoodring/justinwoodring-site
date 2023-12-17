@@ -3,6 +3,7 @@
   <head>
     <title>{% block title %}{% endblock title %}Justin Woodring</title>
     <link rel="stylesheet" href="/assets/main.css" />
+    <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -13,6 +14,7 @@
     ></script>
   </head>
   <body>
+    <div class="content--canvas"></div>
     <div class="nav container">
       <nav>
         <h1 class="logo"><a href="{{config.base_url}}">Justin Woodring</a></h1>
@@ -78,4 +80,7 @@
       </footer>
     </div>
   </body>
+  <script src="/assets/js/noise.min.js"></script>
+  <script src="/assets/js/util.js"></script>
+  <script src="/assets/js/swirl.js"></script>
 </html>

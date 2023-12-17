@@ -7,6 +7,10 @@ html,body{
     margin:0;
 }
 
+html{
+    background-color: #223;
+}
+
 .content--canvas > canvas{
     width:0px;
     height:0px;
@@ -193,6 +197,29 @@ html,body{
             .links > li a,
             .links > li a:visited{
                 color: var(--primary-color);
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .container {
+        main {
+            display: block;
+            .secondary {
+                display: block;
+                padding: 0;
+
+                img{
+                    width:8em;
+                }
+
+                h2,h4{
+                    margin:.25em 0em;
+                }
+            }
+            .primary{
+                display: block;
             }
         }
     }

@@ -1,5 +1,6 @@
 +++
 title = "Why Scala: The Coder's Swiss Army Knife"
+description = "A post-mortem analysis of the death of Scala's hype"
 date = 2023-10-12
 +++
 

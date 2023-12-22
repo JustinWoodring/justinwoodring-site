@@ -1,4 +1,10 @@
-{% extends "base.html" %} {% block title %} {{ page.title }} - Blog - {%
+{% extends "base.html" %} 
+{% block seo %} 
+<meta property="og:title" content="{{ page.title }} - Justin Woodring" />
+<meta property="og:description" content="{{ page.description }}" />
+<meta property="og:image" content="{{ page.image }}" />
+{% endblock seo %}
+{% block title %} {{ page.title }} - Blog - {%
 endblock title %} {% block primary_content %}
 <article>
   <h1 class="title">{{ page.title }}</h1>

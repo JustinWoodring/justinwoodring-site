@@ -50,7 +50,7 @@ kickback on Quirk.
 ![An animated GIF of quantum phase kickback on Quirk](./quantum-phase-kickback.gif)
 
 ## Why is Quantum Phase Kickback important?
-Quantum Phase Kickback is important in various algorithm's such as Grover's because
+Quantum Phase Kickback is important in various algorithms such as Grover's because
 it represents a way to mark particular qubits without changing their collapse probabilty
 in the Z basis, that is |0> and |1>. This is useful because under various rotation
 circumstances, or if measuring in different bases, such as |i> and |-i> or |-> and |+>,

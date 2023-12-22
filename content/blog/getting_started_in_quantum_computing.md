@@ -1,5 +1,6 @@
 +++
 title = "Getting Started in Quantum Computing"
+description = "A collection of resources and thoughts for beginners getting started in quantum computing"
 date = 2023-12-15
 +++
 

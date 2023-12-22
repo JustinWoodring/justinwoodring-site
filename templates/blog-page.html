@@ -2,7 +2,7 @@
 {% block seo %} 
 <meta property="og:title" content="{{ page.title }} - Justin Woodring" />
 <meta property="og:description" content="{{ page.description }}" />
-<meta property='og:url' content='{{ page.url }}'/>
+<meta property='og:url' content='{{ page.permalink | safe }}'/>
 {% if page.extra.image %}
   <meta property="og:image" content="{{ page.extra.image }}" />
 {% endif %}

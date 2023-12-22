@@ -3,7 +3,7 @@ title = "Understanding Quantum Phase Kickback"
 description = "A breakdown and walkthrough of Quantum Phase Kickback and how it works"
 date = 2023-12-22
 [extra]
-image = "quantum-phase-kickback.gif"
+image = "https://justinwoodring.com/blog/understanding-quantum-phase-kickback/quantum-phase-kickback.gif"
 +++
 
 Quantum Computing is really fascinating! It's really cool! Sometimes it's just weird. Now

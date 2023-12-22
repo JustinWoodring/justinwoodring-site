@@ -1,5 +1,7 @@
 +++
 title = "Understanding Quantum Phase Kickback"
+description = "A breakdown and walkthrough of Quantum Phase Kickback and how it works"
+image = "quantum-phase-kickback.gif"
 date = 2023-12-22
 +++
 

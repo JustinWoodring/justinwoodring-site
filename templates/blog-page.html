@@ -3,8 +3,14 @@
 <meta property="og:title" content="{{ page.title }} - Justin Woodring" />
 <meta property="og:description" content="{{ page.description }}" />
 <meta property='og:url' content='{{ page.permalink | safe }}'/>
+
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ page.permalink | safe }}">
+<meta property="twitter:title" content="{{ page.title }} - Justin Woodring">
+<meta property="twitter:description" content="{{ page.description }}">
 {% if page.extra.image %}
   <meta property="og:image" content="{{ page.extra.image }}" />
+  <meta property="twitter:image" content="{{ page.extra.image }}">
 {% endif %}
 {% endblock seo %}
 {% block title %} {{ page.title }} - Blog - {%

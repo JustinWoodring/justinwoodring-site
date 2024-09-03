@@ -1,5 +1,5 @@
-+++ 
-title = "Common Lisp - Why Lisp is a Programmer's Best Friend" 
++++
+title = "Common Lisp - How Lisp did Programming Right" 
 description = "What Common Lisp did right and why it's still a programmer's best friend" 
 date = 2024-09-02
 +++

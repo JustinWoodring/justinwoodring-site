@@ -1,4 +1,4 @@
-+++ 
++++
 title = "On Good User Experience" 
 description = "How User Experience should go beyond Digital Experience"
 date = 2024-10-25 

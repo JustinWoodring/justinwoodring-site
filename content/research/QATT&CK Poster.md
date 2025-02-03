@@ -1,5 +1,5 @@
 +++
-title = "QATT&CK: An Extended Framework for Classifying Adversarial Techniques and Tactics Threatening Quantum Computing Infrastructure Based On MITRE's ATT&CK" 
+title = "QATT&CK: Threat-Intelligence For Understanding the Hybridization of Utility-Scale Quantum Computers Based on ATT&CK" 
 date = 2025-02-01 
 +++
 
@@ -15,6 +15,4 @@ traditional cybersecurity with an focus on quantum computing
 infrastructure, enabling a more comprehensive understanding of
 adversarial behavior in this domain.
 
-Poster entitled "QATT&CK Threat-Intelligence For Understanding
-the Hybridization of Utility-Scale Quantum Computers Based
-on ATT&CK" presented at Q-NET SYMPOSIUM 2025.
+Poster presented at Q-NET SYMPOSIUM 2025.

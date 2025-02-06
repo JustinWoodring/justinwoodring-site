@@ -1,4 +1,7 @@
-+++ title = "QATT&CK: Threat-Intelligence For Understanding the Hybridization of Utility-Scale Quantum Computers Based on ATT&CK" date = 2025-02-01 +++
++++
+title = "QATT&CK: Threat-Intelligence For Understanding the Hybridization of Utility-Scale Quantum Computers Based on ATT&CK"
+date = 2025-02-01
++++
 
 Summary
 

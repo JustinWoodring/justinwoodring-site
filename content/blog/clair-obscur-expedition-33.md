@@ -4,6 +4,10 @@ description = "A brief essay on the key themes and ideas in Clair Obscur: Expedi
 date = 2025-05-15
 +++
 
+**Spoilers: The intent of this article is not discuss the story in great detail, however it
+assumes a knowledge of the plot and makes references to these plot elements. Therefore if you have
+not played the game and don't want it spoiled, stop reading here.**
+
 Sandfall Interactive's *Clair Obscur: Expedition 33* will undoubtedly be remembered as a classic.
 While many aspects of the game received praise, what truly stands out are the breathtaking visuals
 and gripping storyline. This is a tale of an existential quest for survival, and at the center of

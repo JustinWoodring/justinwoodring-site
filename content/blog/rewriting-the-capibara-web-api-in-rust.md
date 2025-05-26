@@ -74,7 +74,8 @@ You can see this logic is separately contained from the model itself and the con
 impl<'r> FromRequest<'r> for Document {
     type Error = DocumentError;
 
-    async fn from_request(req: &'r Request<'_>) -> Outcome<Self, DocumentError> {
+    async fn from_request(req: &'r Request<'_>) ->
+        Outcome<Self, DocumentError> {
         let outcome = req.guard::<&State<CapibaraState>>().await;
         let state = outcome.succeeded().unwrap();
 
@@ -101,7 +102,7 @@ impl<'r> FromRequest<'r> for Document {
 
             if let Ok(row) = result {
                 let data : &str = row.try_get("data").unwrap_or("");
-                if let Ok(document) = rocket::serde::json::serde_json::from_str::<Document>(data) {
+                if let Ok(document) = serde_json::from_str::<Document>(data) {
                     let mut lock = state.document.write().await;
                     *lock = Some(document.clone());
 

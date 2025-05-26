@@ -90,7 +90,10 @@ impl<'r> FromRequest<'r> for Document {
         }
 
         if not_populated {
-            let query = sqlx::query(r#"SELECT title, convert_from(blob_data, 'UTF8') as data FROM blob_persist WHERE title = $1;"#);
+            let query = sqlx::query(r#"
+                SELECT title, convert_from(blob_data, 'UTF8')
+                as data FROM blob_persist WHERE title = $1;
+            "#);
 
             let result = query
             .bind("capibara_document")
@@ -125,7 +128,9 @@ Here is the difference in terms of rocket code, a slightly different version of 
 #[shuttle_runtime::main]
 async fn main(
     #[shuttle_runtime::Secrets] secrets: SecretStore,
-    #[shuttle_shared_db::Postgres(local_uri = "postgres://postgres:password@localhost:5432/postgres")] pool: PgPool
+    #[shuttle_shared_db::Postgres(
+        local_uri = "postgres://postgres:password@localhost:5432/postgres
+    ")] pool: PgPool
 ) -> shuttle_rocket::ShuttleRocket {}
 ```
 

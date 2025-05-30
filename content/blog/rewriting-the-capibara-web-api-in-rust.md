@@ -1,7 +1,7 @@
 +++
 title = "In Praise of Shuttle: Oxidizing the Capibara Web API"
 description = "An essay on the modernizing state of the Rust web development experience."
-date = 2025-05-26
+date = 2025-05-30
 +++
 
 For those of you following obscure languages you may be aware that Scala 2 has somewhat died as Scala 3 has finally been released and mostly stabilized. So what that means for me is, my web api stack for the Capibara project is officially on LTS life support. Realistically speaking, it's not a great place to be for hobby side projects let alone large corporate infrastructure. This predicament led me back to Rust—and allow me to clarify that I was an early band wagoner for Rust. Probably about a year before Rust exploded in popularity I was definitely one of those people going "Rust! Have your heard about it? Let's use Rust! etc."

@@ -4,7 +4,7 @@ description = "An essay on the modernizing state of the Rust web development exp
 date = 2025-05-26
 +++
 
-For those of you following obscure languages you may be aware that Scala 2 has died as finally Scala 3 released. So what that means for me is, my web api stack for the Capibara project is officially on LTS life support. Realistically speaking, it's not a great place to be for hobby side projects let alone large corporate infrastructure. This predicament led me back to Rust—and allow me to clarify that I was an early band wagoner for Rust. Probably about a year before Rust exploded in popularity I was definitely one of those people going "Rust! Have your heard about it? Let's use Rust! etc."
+For those of you following obscure languages you may be aware that Scala 2 has somewhat died as Scala 3 has finally been released and mostly stabilized. So what that means for me is, my web api stack for the Capibara project is officially on LTS life support. Realistically speaking, it's not a great place to be for hobby side projects let alone large corporate infrastructure. This predicament led me back to Rust—and allow me to clarify that I was an early band wagoner for Rust. Probably about a year before Rust exploded in popularity I was definitely one of those people going "Rust! Have your heard about it? Let's use Rust! etc."
 
 # What is Capibara?
 
@@ -142,12 +142,16 @@ For projects like Capibara, this maturation offers practical benefits beyond con
 
 The developer experience has reached a point where choosing Rust for web APIs no longer requires justification based on future potential—the present reality delivers on the promises that early adopters like myself made on faith.
 
-### Connecting with Capibara 
+## A Note on Scala
+As I was writing this post it occurred to me that perhaps this content might express a lack of desire to continue working with Scala, dismay with the state of the community, perhaps even an attempt to siphon off it's very productive and happy community. And I wanted to counter that with vehement "No." My intention with this article was to express my satisfaction with the current state of Rust web development, a far cry from a few years ago. I really like Scala. As a programming language, Scala is one of my favorites right alongside Rust and PHP, and although some of these languages are popular and some get in my opinion undue amounts of hate, I'd encourage anyone who enjoys using Rust to check out Scala.
 
-#### Temporary Web Unavailibilty Note
-And while I'm currently in middle of transitioning the primary https://capibara.tools domain registrars I'd certainly encourage you to check out the project at the auxiliary shuttle hosting url: https://capibara-website-svup.shuttle.app/ 
+Furthermore, as I expand Capibara offerings I recognize that people might want different self-hosted APIs and this might offer a reason to maintain the Scala codebase by rewriting the code in Play Framework for Scala 3, as it offers a JVM based private hosting solution as opposed to a native one.
 
-#### Project Discord and Repositories
+## Connecting with Capibara 
+
+Finally, if you're interested in Capibara or want to learn more about please connect with me and others in the Capibara discord server or over issues and PRs in the repositories. And of course, please star the repositories to show some love!
+
+### Project Discord and Repositories
 - Github Organization: https://github.com/Capibara-Tools
 - Capibara Discord: https://discord.gg/XwNUMMY4b2
 

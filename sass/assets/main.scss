@@ -1,10 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Oxygen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Limelight&display=swap');
 
 html,body{
     font-family: "IBM Plex Sans";
     color:#EEE;
     padding:0;
     margin:0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: Limelight;
 }
 
 html{

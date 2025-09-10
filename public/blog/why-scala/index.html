@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Justin Woodring">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Computer Science, Academics, Quantum Computing, Cryptography, Machine Learning, Algorithms, Cloud Computing, and Physics">
+     
+<meta name="og:site_name" content="Justin Woodring"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Why Scala: The Coder&#x27;s Swiss Army Knife - Justin Woodring" />
+<meta property="og:description" content="A post-mortem analysis of the death of Scala&#x27;s hype" />
+<meta property='og:url' content='https://justinwoodring.com/blog/why-scala/'/>
+
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://justinwoodring.com/blog/why-scala/">
+<meta property="twitter:title" content="Why Scala: The Coder&#x27;s Swiss Army Knife - Justin Woodring">
+<meta property="twitter:description" content="A post-mortem analysis of the death of Scala&#x27;s hype">
+
+
+    <title> Why Scala: The Coder&#x27;s Swiss Army Knife - Blog - Justin Woodring</title>
+    <link rel="stylesheet" href="/assets/main.css" />
+    <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <div class="content--canvas"></div>
+    <div class="nav container">
+      <nav>
+        <h1 class="logo"><a href="https:&#x2F;&#x2F;justinwoodring.com">Justin Woodring</a></h1>
+        <ul class="links">
+          <li><a href="https:&#x2F;&#x2F;justinwoodring.com">Home</a></li>
+          <li><a href="https://justinwoodring.com/blog/">Blog</a></li>
+          <li>
+            <a href="https://justinwoodring.com/research/">Research</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="content container">
+      <main>
+        <div class="secondary">
+          <img
+            src="https://justinwoodring.com/assets/alt-profile-comp.jpeg"
+            alt="Justin Woodring"
+          />
+          <h2 class="author">Justin Woodring</h2>
+          <h4>PhD student at LSU</h4>
+          <ul class="links">
+            <li>
+              <a
+                norel=""
+                noopener=""
+                href="https://www.linkedin.com/in/justin-woodring/"
+                ><ion-icon name="logo-linkedin"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a norel="" noopener="" href="https://github.com/JustinWoodring"
+                ><ion-icon name="logo-github"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a norel="" noopener="" href="https://scholar.google.com/citations?user=9edQ_EIAAAAJ&hl=en">
+                <ion-icon name="school"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a
+                norel=""
+                noopener=""
+                href="https://www.youtube.com/@justinwoodring"
+                ><ion-icon name="logo-youtube"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a norel="" noopener="" href="mailto:jwoodrg@gmail.com"
+                ><ion-icon name="mail-sharp"></ion-icon
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div class="primary">
+          
+<article>
+  <h1 class="title">Why Scala: The Coder&#x27;s Swiss Army Knife</h1>
+  <h4 class="date">2023-10-12</h4>
+  <p>Scala. The heyday of this language has come and gone. Yet despite a seemingly strong public
+distaste, there is an ineffable glimmer to this language. Something about it calls to an
+intellectual nature. At face value, it seems as though Scala is just another failed &quot;better java&quot;
+with so many esoteric language constructs that it's difficult to grasp. A lot of people will say
+Kotlin is better. But then again those people might just be wrong.</p>
+<p>In my opinion, Scala is the most 'powerful' language I've ever come across. The language itself is 
+presented as a mesmerizing clash and harmony between object-oriented and functional paradigms unlike
+anything else I've seen. People who effectively wield this dualistic nature might as well be using the
+&quot;Force&quot; or &quot;One Power&quot; while everyone else is playing with swords. </p>
+<p>In more grounded terms, Scala for the experienced user can quickly be used to solve the most complex
+problems simply and for inexperienced users can lead them down hopelessly winding paths of antipatterns
+and senseless complexity. But that is it's namesake, Scala, the scalable language. It can be adapted
+to solve any problem. But its greatest strength is its weakness in that it's easy to write horrifically
+bad code and can take a long time to properly wield.</p>
+<p>Consider this FizzBuzz code:</p>
+<pre data-lang="scala" style="background-color:#2b303b;color:#c0c5ce;" class="language-scala "><code class="language-scala" data-lang="scala"><span style="color:#b48ead;">for</span><span> i &lt;- </span><span style="color:#d08770;">1</span><span> until </span><span style="color:#d08770;">100 </span><span style="color:#b48ead;">do</span><span> println(
+</span><span>    i </span><span style="color:#b48ead;">match
+</span><span>        </span><span style="color:#b48ead;">case </span><span style="color:#bf616a;">i </span><span style="color:#b48ead;">if</span><span> i % </span><span style="color:#d08770;">3 </span><span>== </span><span style="color:#d08770;">0</span><span> &amp;&amp; i % </span><span style="color:#d08770;">5 </span><span>== </span><span style="color:#d08770;">0 </span><span style="color:#b48ead;">=&gt; </span><span>&quot;</span><span style="color:#a3be8c;">FizzBuzz</span><span>&quot;
+</span><span>        </span><span style="color:#b48ead;">case </span><span style="color:#bf616a;">i </span><span style="color:#b48ead;">if</span><span> i % </span><span style="color:#d08770;">3 </span><span>== </span><span style="color:#d08770;">0 </span><span style="color:#b48ead;">=&gt; </span><span>&quot;</span><span style="color:#a3be8c;">Fizz</span><span>&quot;
+</span><span>        </span><span style="color:#b48ead;">case </span><span style="color:#bf616a;">i </span><span style="color:#b48ead;">if</span><span> i % </span><span style="color:#d08770;">5 </span><span>== </span><span style="color:#d08770;">0 </span><span style="color:#b48ead;">=&gt; </span><span>&quot;</span><span style="color:#a3be8c;">Buzz</span><span>&quot;
+</span><span>        </span><span style="color:#b48ead;">case </span><span style="color:#bf616a;">i </span><span style="color:#b48ead;">=&gt;</span><span> i
+</span><span>)
+</span></code></pre>
+<p>This sample is incredibly expressive and quite simple to understand. But the number of complex concepts that must
+be understood to write that code far outnumber the equivalent barbaric Java:</p>
+<pre data-lang="java" style="background-color:#2b303b;color:#c0c5ce;" class="language-java "><code class="language-java" data-lang="java"><span style="color:#b48ead;">for </span><span>(</span><span style="color:#b48ead;">int</span><span> i = </span><span style="color:#d08770;">1</span><span>; i &lt;= n; i++)   {  
+</span><span>  </span><span style="color:#b48ead;">if </span><span>(i%</span><span style="color:#d08770;">3</span><span>==</span><span style="color:#d08770;">0 </span><span>&amp;&amp; i%</span><span style="color:#d08770;">5</span><span>==</span><span style="color:#d08770;">0</span><span>) {   
+</span><span>      </span><span style="color:#ebcb8b;">System</span><span>.out.</span><span style="color:#bf616a;">print</span><span>(&quot;</span><span style="color:#a3be8c;">FizzBuzz</span><span>&quot;);  
+</span><span>  } 
+</span><span>  </span><span style="color:#b48ead;">else if </span><span>(i%</span><span style="color:#d08770;">3</span><span>==</span><span style="color:#d08770;">0</span><span>) {  
+</span><span>      </span><span style="color:#ebcb8b;">System</span><span>.out.</span><span style="color:#bf616a;">print</span><span>(&quot;</span><span style="color:#a3be8c;">Fizz</span><span>&quot;);  
+</span><span>  }   
+</span><span>  </span><span style="color:#b48ead;">else if </span><span>(i%</span><span style="color:#d08770;">5</span><span>==</span><span style="color:#d08770;">0</span><span>) {   
+</span><span>    </span><span style="color:#ebcb8b;">System</span><span>.out.</span><span style="color:#bf616a;">print</span><span>(&quot;</span><span style="color:#a3be8c;">Buzz</span><span>&quot;);  
+</span><span>  }   
+</span><span>  </span><span style="color:#b48ead;">else  </span><span>{  
+</span><span>    </span><span style="color:#ebcb8b;">System</span><span>.out.</span><span style="color:#bf616a;">print</span><span>(i);  
+</span><span>  }
+</span><span>}
+</span></code></pre>
+<p>None of this is to say you that couldn't write the barbaric format in Scala, but what I am saying is that Scala offers
+a higher path. A higher path that could easily be ignored because Scala still lets you code a solution like a
+stone-age trogolodyte. That's where the difficulty comes in. And frankly in my opinion it's the primary reason
+that Scala is considered an arcane magic and companies prefer to use a language like Go with concepts so simple
+a monkey could code in it. Because it's just that, companies and people don't want to solve problems well when they
+can simply solve problems good enough and it's easy for everyone (even the new intern) to understand.</p>
+<p>For a list of actual things Scala can be used to do:</p>
+<ul>
+<li>It runs on the JVM, Javascript, or natively. </li>
+<li>You can program in functional and object-oriented paradigms.</li>
+<li>It supports inferred static typing, so it can used for scripting or building a huge enterprise application.</li>
+<li>It supports both immutable and mutable programming.</li>
+<li>Natively you can even choose to forego the garbage collector and handle that yourself.</li>
+<li>You can also export functionality back to the various respective platforms and packages.</li>
+<li>And for scripting purposes you can run it in a jupyter notebook or like a shell script equivalent to python or bash.</li>
+<li>It has complex pattern matching support.</li>
+<li>It also supports sophisticated for comprehensions.</li>
+</ul>
+<p>The above is a summary of the most notable aspects about the language but frankly there's a lot more I didn't even list.
+So my rationale for why Scala will never be mainstream is because it's too hard for the normies, but if you're cool
+and you &quot;Use Arch Btw&quot; or are similarly inclined as a power user. Then you should use Scala, because your brain might
+hurt sometimes but Scala is an academic exercise in designing the most powerful language we've seen yet and it's the closest
+anyone will ever get to being a 10x developer (if such a thing were possible). It was also created
+in Switzerland which makes the fact that language is basically a swiss army knife pretty mordant.</p>
+
+</article>
+
+        </div>
+      </main>
+    </div>
+    <div class="footer container">
+      <footer>
+        Copyright &copy
+        <script type="text/javascript">
+          document.write(new Date().getFullYear());
+        </script>
+        Justin Woodring. All rights reserved.
+      </footer>
+    </div>
+  </body>
+  <script src="/assets/js/noise.min.js"></script>
+  <script src="/assets/js/util.js"></script>
+  <script src="/assets/js/swirl.js"></script>
+</html>

@@ -41,10 +41,10 @@
       <nav>
         <h1 class="logo"><a href="{{config.base_url}}">Justin Woodring</a></h1>
         <ul class="links">
-          <li><a href="{{ config.base_url }}">Home</a></li>
-          <li><a href="{{ get_url(path='@/blog/_index.md') }}">Blog</a></li>
+          <li><a href="{{ config.base_url }}"><span>Home</span></a></li>
+          <li><a href="{{ get_url(path='@/blog/_index.md') }}"><span>Blog</span></a></li>
           <li>
-            <a href="{{ get_url(path='@/research/_index.md') }}">Research</a>
+            <a href="{{ get_url(path='@/research/_index.md') }}"><span>Research</span></a>
           </li>
         </ul>
       </nav>
@@ -56,41 +56,43 @@
             src="{{ get_url(path='/assets/alt-profile-comp.jpeg') }}"
             alt="Justin Woodring"
           />
-          <h2 class="author">Justin Woodring</h2>
-          <h4>PhD student at LSU</h4>
-          <ul class="links">
-            <li>
-              <a
-                norel=""
-                noopener=""
-                href="https://www.linkedin.com/in/justin-woodring/"
-                ><ion-icon name="logo-linkedin"></ion-icon
-              ></a>
-            </li>
-            <li>
-              <a norel="" noopener="" href="https://github.com/JustinWoodring"
-                ><ion-icon name="logo-github"></ion-icon
-              ></a>
-            </li>
-            <li>
-              <a norel="" noopener="" href="https://scholar.google.com/citations?user=9edQ_EIAAAAJ&hl=en">
-                <ion-icon name="school"></ion-icon>
-              </a>
-            </li>
-            <li>
-              <a
-                norel=""
-                noopener=""
-                href="https://www.youtube.com/@justinwoodring"
-                ><ion-icon name="logo-youtube"></ion-icon
-              ></a>
-            </li>
-            <li>
-              <a norel="" noopener="" href="mailto:jwoodrg@gmail.com"
-                ><ion-icon name="mail-sharp"></ion-icon
-              ></a>
-            </li>
-          </ul>
+          <div class="profile-info">
+            <h2 class="author">Justin Woodring</h2>
+            <h4>PhD student at LSU</h4>
+            <ul class="links">
+              <li>
+                <a
+                  norel=""
+                  noopener=""
+                  href="https://www.linkedin.com/in/justin-woodring/"
+                  ><ion-icon name="logo-linkedin"></ion-icon
+                ></a>
+              </li>
+              <li>
+                <a norel="" noopener="" href="https://github.com/JustinWoodring"
+                  ><ion-icon name="logo-github"></ion-icon
+                ></a>
+              </li>
+              <li>
+                <a norel="" noopener="" href="https://scholar.google.com/citations?user=9edQ_EIAAAAJ&hl=en">
+                  <ion-icon name="school"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a
+                  norel=""
+                  noopener=""
+                  href="https://www.youtube.com/@justinwoodring"
+                  ><ion-icon name="logo-youtube"></ion-icon
+                ></a>
+              </li>
+              <li>
+                <a norel="" noopener="" href="mailto:jwoodrg@gmail.com"
+                  ><ion-icon name="mail-sharp"></ion-icon
+                ></a>
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="primary">
           {% block primary_content %}{% endblock primary_content %}

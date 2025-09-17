@@ -1,6 +1,16 @@
 'use strict';
 
-const particleCount = 700;
+// Performance optimizations and accessibility features
+let animationEnabled = true;
+let rafId = null;
+
+// Check for reduced motion preference
+if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    animationEnabled = false;
+}
+
+// Reduced particle count for better performance
+const particleCount = animationEnabled ? 200 : 50;
 const particlePropCount = 9;
 const particlePropsLength = particleCount * particlePropCount;
 const rangeY = 100;
@@ -9,14 +19,14 @@ const rangeTTL = 250;
 const baseSpeed = 0.1;
 const rangeSpeed = .25;
 const baseRadius = 1;
-const rangeRadius = 4;
+const rangeRadius = 3;
 const baseHue = 220;
 const rangeHue = 100;
-const noiseSteps = 8;
+const noiseSteps = 6; // Reduced noise steps for performance
 const xOff = 0.00125;
 const yOff = 0.00125;
 const zOff = 0.0005;
-const backgroundColor = 'hsla(260,40%,5%,1)';
+const backgroundColor = 'hsla(260,40%,8%,1)';
 
 let container;
 let canvas;
@@ -36,8 +46,10 @@ let hues;
 function setup() {
 	createCanvas();
   resize();
-  initParticles();
-	draw();
+  if (animationEnabled) {
+    initParticles();
+    draw();
+  }
 }
 
 function initParticles() {
@@ -167,14 +179,9 @@ function resize() {
 }
 
 function renderGlow() {
+  // Simplified glow effect for better performance
   ctx.b.save();
-  ctx.b.filter = 'blur(8px) brightness(200%)';
-  ctx.b.globalCompositeOperation = 'lighter';
-  ctx.b.drawImage(canvas.a, 0, 0);
-  ctx.b.restore();
-
-  ctx.b.save();
-  ctx.b.filter = 'blur(4px) brightness(200%)';
+  ctx.b.filter = 'blur(4px) brightness(150%)';
   ctx.b.globalCompositeOperation = 'lighter';
   ctx.b.drawImage(canvas.a, 0, 0);
   ctx.b.restore();
@@ -188,6 +195,8 @@ function renderToScreen() {
 }
 
 function draw() {
+  if (!animationEnabled) return;
+  
   tick++;
 
   ctx.a.clearRect(0, 0, canvas.a.width, canvas.a.height);
@@ -199,8 +208,38 @@ function draw() {
   renderGlow();
   renderToScreen();
 
-	window.requestAnimationFrame(draw);
+  rafId = window.requestAnimationFrame(draw);
+}
+
+// Add function to toggle animation
+function toggleAnimation() {
+  animationEnabled = !animationEnabled;
+  if (animationEnabled && !rafId) {
+    draw();
+  } else if (!animationEnabled && rafId) {
+    cancelAnimationFrame(rafId);
+    rafId = null;
+  }
 }
 
 window.addEventListener('load', setup);
 window.addEventListener('resize', resize);
+
+// Animation toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleButton = document.getElementById('animation-toggle');
+  const toggleIcon = document.getElementById('animation-icon');
+  
+  if (toggleButton && toggleIcon) {
+    // Set initial state
+    toggleIcon.textContent = animationEnabled ? '⚡' : '⏸️';
+    
+    toggleButton.addEventListener('click', function() {
+      toggleAnimation();
+      toggleIcon.textContent = animationEnabled ? '⚡' : '⏸️';
+      toggleButton.setAttribute('aria-label', 
+        animationEnabled ? 'Disable background animation' : 'Enable background animation'
+      );
+    });
+  }
+});

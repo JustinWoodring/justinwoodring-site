@@ -1,17 +1,25 @@
 {% extends "base.html" %} {% block title %}{{ section.title }} - {% endblock
 title%} {% block primary_content %}
-<article>
-  <h1 class="title">{{ section.title }}</h1>
-  <ul class="blog-list">
+<section class="content-section">
+  <h1>{{ section.title }}</h1>
+  <div class="blog-cards">
     <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->
     {% for page in section.pages %}
-    <li>
-      <a href="{{ page.permalink | safe }}"
-        ><h2>{{ page.title }}</h2>
-        <h4>{{ page.date }}</h4></a
-      >
-    </li>
+    <article class="blog-card">
+      <a href="{{ page.permalink | safe }}">
+        <div class="blog-card-header">
+          <time class="blog-date">{{ page.date }}</time>
+        </div>
+        <h2>{{ page.title }}</h2>
+        {% if page.description %}
+        <p class="blog-excerpt">{{ page.description }}</p>
+        {% elif page.summary %}
+        <p class="blog-excerpt">{{ page.summary }}</p>
+        {% endif %}
+        <span class="read-more">Read article →</span>
+      </a>
+    </article>
     {% endfor %}
-  </ul>
-</article>
+  </div>
+</section>
 {% endblock primary_content %}

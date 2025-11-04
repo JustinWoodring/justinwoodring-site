@@ -1,131 +1,115 @@
 {% extends "base.html" %} {% block title %}{% endblock title %} {% block
 primary_content %}
 
-<article>
-  <h1 class="title">Greetings!</h1>
+<section class="content-section intro-section">
+  <h1>Welcome!</h1>
   <p>
-    I'm Justin Woodring, a PhD candidate of computer science at Louisiana State
-    University researching quantum computing, machine learning, and cybersecurity.
+    I'm Justin Woodring, a systems thinker and PhD candidate at Louisiana State University.
   </p>
 
   <p>
-    I'm also an avid open source contributor with a love for programming
-    languages such as Rust, Scala, and Python.
-  </p>
-  <p>
-    I find topics such as Quantum Computing, Cryptography, Machine Learning, Algorithms, Cloud
-    Computing, and Physics very interesting.
+    I spend my days architecting software systems that bridge research and reality—working at the intersection of quantum computing, machine learning, and cybersecurity. My approach combines deep technical expertise with strategic thinking, whether I'm designing distributed systems, contributing to open source, or exploring emerging technologies in Ruby, Rust, and Java.
   </p>
 
+  <p>
+    I believe the best systems are built by those who understand both the code and the broader vision.
+  </p>
+</section>
+
+<section class="content-section">
   <h2>Education</h2>
-  <ul class="box-list">
-    <a norel="" noopener="" href="https://www.lsu.edu/">
-      <li>
-        <img
-          src="https://itservice.lsu.edu/TDPortal/Images/Viewer?fileName=0d9805f8-84ce-4007-ba45-3debd575f266.png"
-        />
-        <div class="text">
-          Louisiana State University<br />
-          <h6>PhD Student 2023-Present</h6>
-        </div>
-      </li>
-    </a>
-    <a norel="" noopener="" href="https://www.lsu.edu/">
-      <li>
-        <img
-          src="https://itservice.lsu.edu/TDPortal/Images/Viewer?fileName=0d9805f8-84ce-4007-ba45-3debd575f266.png"
-        />
-        <div class="text">
-          Louisiana State University<br />
-          <h6>MS Student 2023-2025</h6>
-        </div>
-      </li>
-    </a>
-    <a norel="" noopener="" href="https://www.southeastern.edu/">
-      <li>
-        <img
-          src="https://www.southeastern.edu/wp-content/uploads/office-of-university-marketing-and-communications/university-logo-mark.svg"
-        />
-        <div class="text">
-          Southeastern Louisiana University<br />
-          <h6>BS Computer Science - Minor in Physics - Minor in Math - 2018-2022</h6>
-        </div>
-      </li>
-    </a>
-  </ul>
+  <div class="education-timeline">
+    <div class="timeline-item">
+      <div class="timeline-marker">2023–Present</div>
+      <div class="timeline-content">
+        <a href="https://www.lsu.edu/" norel="" noopener="">
+          <img src="https://itservice.lsu.edu/TDPortal/Images/Viewer?fileName=0d9805f8-84ce-4007-ba45-3debd575f266.png" alt="LSU Logo"/>
+          <h3>Louisiana State University</h3>
+          <p>PhD Student</p>
+        </a>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-marker">2023–2025</div>
+      <div class="timeline-content">
+        <a href="https://www.lsu.edu/" norel="" noopener="">
+          <img src="https://itservice.lsu.edu/TDPortal/Images/Viewer?fileName=0d9805f8-84ce-4007-ba45-3debd575f266.png" alt="LSU Logo"/>
+          <h3>Louisiana State University</h3>
+          <p>Master of Science</p>
+        </a>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-marker">2018–2022</div>
+      <div class="timeline-content">
+        <a href="https://www.southeastern.edu/" norel="" noopener="">
+          <img src="https://www.southeastern.edu/wp-content/uploads/office-of-university-marketing-and-communications/university-logo-mark.svg" alt="SELU Logo"/>
+          <h3>Southeastern Louisiana University</h3>
+          <p>BS Computer Science • Minor in Physics • Minor in Math</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section class="content-section">
   <h2>Organizations</h2>
-  <ul class="box-list">
-    <a norel="" noopener="" href="https://quantumbr.org/">
-      <li>
-        <img
-          src="https://raw.githubusercontent.com/JustinWoodring/quantumbr-site/main/public/qbr.png"
-        />
-        <div class="text">
-          quantumBR - Founder<br />
-          <h6>a quantum computing user group located in Baton Rouge</h6>
-        </div>
-      </li>
+  <div class="organization-cards">
+    <a href="https://quantumbr.org/" norel="" noopener="" class="org-card">
+      <div class="org-icon">
+        <img src="https://raw.githubusercontent.com/JustinWoodring/quantumbr-site/main/public/qbr.png" alt="quantumBR"/>
+      </div>
+      <div class="org-content">
+        <h3>quantumBR</h3>
+        <span class="org-role">Founder</span>
+        <p>A quantum computing user group located in Baton Rouge</p>
+      </div>
     </a>
-
-    <a norel="" noopener="" href="https://www.sigmapisigma.org/about/sigma-pi-sigma">
-      <li>
-        <img src="https://aip.brightspotcdn.com/dims4/default/4729deb/2147483647/strip/true/crop/328x328+0+0/resize/800x800!/format/webp/quality/90/?url=https%3A%2F%2Fk1-prod-aip.s3.us-east-2.amazonaws.com%2Fbrightspot%2Fe1%2F5d%2Fc51d6a134890b15465d37158f52a%2Fsps-logo.png"/>
-        <div class="text">
-          Sigma Pi Sigma & Society of Physics Students - Member<br />
-          <h6>Sigma Pi Sigma, the national physics honor society, is housed within the Society of Physics Students (SPS)</h6>
-      </li>
+    <a href="https://www.sigmapisigma.org/about/sigma-pi-sigma" norel="" noopener="" class="org-card">
+      <div class="org-icon">
+        <img src="https://aip.brightspotcdn.com/dims4/default/4729deb/2147483647/strip/true/crop/328x328+0+0/resize/800x800!/format/webp/quality/90/?url=https%3A%2F%2Fk1-prod-aip.s3.us-east-2.amazonaws.com%2Fbrightspot%2Fe1%2F5d%2Fc51d6a134890b15465d37158f52a%2Fsps-logo.png" alt="Sigma Pi Sigma"/>
+      </div>
+      <div class="org-content">
+        <h3>Sigma Pi Sigma & SPS</h3>
+        <span class="org-role">Member</span>
+        <p>National physics honor society housed within the Society of Physics Students</p>
+      </div>
     </a>
-  </ul>
+  </div>
+</section>
 
+<section class="content-section">
   <h2>Projects</h2>
-  <ul class="box-list">
-    <a norel="" noopener="" href="https://capibara.tools/">
-      <li>
-        <img
-          src="https://avatars.githubusercontent.com/u/119705110?s=200&v=4"
-        />
-        <div class="text">
-          Capibara<br />
-          <h6>Tooling and Documentation for C libraries</h6>
-        </div>
-      </li>
+  <div class="projects-grid">
+    <a href="https://capibara.tools/" norel="" noopener="" class="project-card">
+      <div class="project-icon">
+        <img src="https://avatars.githubusercontent.com/u/119705110?s=200&v=4" alt="Capibara"/>
+      </div>
+      <h3>Capibara</h3>
+      <p>Tooling and Documentation for C libraries</p>
     </a>
-    <a norel="" noopener="" href="https://github.com/JustinWoodring/DFAify">
-      <li>
-        <img
-          src="https://raw.githubusercontent.com/justinwoodring/DFAify/main/src/main/resources/com/justinwoodring/dfaify/dfaify.png"
-        />
-        <div class="text">
-          DFAify<br />
-          <h6>Graphical DFA simulation tool</h6>
-        </div>
-      </li>
+    <a href="https://github.com/JustinWoodring/DFAify" norel="" noopener="" class="project-card">
+      <div class="project-icon">
+        <img src="https://raw.githubusercontent.com/justinwoodring/DFAify/main/src/main/resources/com/justinwoodring/dfaify/dfaify.png" alt="DFAify"/>
+      </div>
+      <h3>DFAify</h3>
+      <p>Graphical DFA simulation tool</p>
     </a>
-    <a norel="" noopener="" href="https://justinwoodring.com/qubit-simulator/">
-      <li>
-        <img
-          src="https://justinwoodring.com/qubit-simulator/assets/qubit-icon.png"
-        />
-        <div class="text">
-          Qubit Simulator<br />
-          <h6>An interactive animated 3D bloch sphere visualization of a qubit</h6>
-        </div>
-      </li>
+    <a href="https://justinwoodring.com/qubit-simulator/" norel="" noopener="" class="project-card">
+      <div class="project-icon">
+        <img src="https://justinwoodring.com/qubit-simulator/assets/qubit-icon.png" alt="Qubit Simulator"/>
+      </div>
+      <h3>Qubit Simulator</h3>
+      <p>Interactive animated 3D bloch sphere visualization of a qubit</p>
     </a>
-    <a norel="" noopener="" href="https://justinwoodring.com/ssdx/">
-      <li>
-        <img
-          src="https://justinwoodring.com/ssdx/assets/Icon-180.png"
-        />
-        <div class="text">
-          Snowman Sniper DX<br />
-          <h6>Fun holiday-themed snowman hunting game with an arcade feel</h6>
-        </div>
-      </li>
+    <a href="https://justinwoodring.com/ssdx/" norel="" noopener="" class="project-card">
+      <div class="project-icon">
+        <img src="https://justinwoodring.com/ssdx/assets/Icon-180.png" alt="Snowman Sniper DX"/>
+      </div>
+      <h3>Snowman Sniper DX</h3>
+      <p>Holiday-themed snowman hunting game with an arcade feel</p>
     </a>
-  </ul>
-  
-</article>
+  </div>
+</section>
 
 {% endblock primary_content %}

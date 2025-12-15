@@ -129,3 +129,5 @@ Now, if a user runs `slatron-server` (or `slatron-node`) without a config file, 
 Rust's tooling continues to impress me. By combining feature flags, build scripts, and the `vendored` crate ecosystem, I was able to build a cross-platform, self-contained distributed application pipeline that is robust and easy to maintain.
 
 Check out the code on GitHub: [JustinWoodring/slatron](https://github.com/JustinWoodring/slatron)
+
+Or watch this video to set up slatron for yourself with prebuilt binaries: [Getting Started with Slatron on Mac](https://youtu.be/alMnX4MNhcI)

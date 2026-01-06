@@ -36,10 +36,14 @@ code, pre {
 
 /* CSS Variables */
 :root {
-  /* Modern Smart Theme - Indigo & Slate */
+  /* Modern Smart Theme - Indigo & Slate with 80s Flair */
   --primary-color: #4f46e5; /* Indigo 600 */
   --primary-hover: #4338ca; /* Indigo 700 */
-  --accent-color: #0ea5e9;  /* Sky 500 */
+
+  /* 80s Retro Accents (Classy) */
+  --retro-pink: #db2777;    /* Pink 600 */
+  --retro-cyan: #0891b2;    /* Cyan 600 */
+  --retro-purple: #7c3aed;  /* Violet 600 */
 
   --text-primary: #0f172a;  /* Slate 900 */
   --text-secondary: #475569; /* Slate 600 */
@@ -56,6 +60,9 @@ code, pre {
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* Retro Shadow - sharp, colored offset */
+  --retro-shadow-hover: 4px 4px 0 0 var(--retro-cyan);
 }
 
 /* Top Navigation - Right Aligned Menu */
@@ -65,7 +72,8 @@ code, pre {
   z-index: 100;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(to right, var(--primary-color), var(--retro-pink)) 1;
   padding: 1rem 3rem;
   display: flex;
   justify-content: space-between;
@@ -75,33 +83,38 @@ code, pre {
   .logo {
     font-family: "Inter", sans-serif;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: -0.02em;
+    text-transform: uppercase;
 
     a {
       text-decoration: none;
-      color: var(--text-primary);
-      transition: color 0.2s ease;
+      background: linear-gradient(45deg, var(--primary-color), var(--retro-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: opacity 0.2s ease;
 
       &:hover {
-        color: var(--primary-color);
+        opacity: 0.8;
       }
     }
   }
 
   .nav-links {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
 
     a {
       text-decoration: none;
       color: var(--text-secondary);
-      font-weight: 500;
+      font-weight: 600;
       font-size: 0.9375rem;
       padding: 0.5rem 0;
       transition: color 0.2s ease;
       position: relative;
+      font-family: "JetBrains Mono", monospace;
+      letter-spacing: -0.05em;
 
       &::after {
         content: '';
@@ -110,7 +123,7 @@ code, pre {
         left: 0;
         width: 0;
         height: 2px;
-        background: var(--primary-color);
+        background: linear-gradient(to right, var(--retro-cyan), var(--retro-pink));
         transition: width 0.2s ease;
       }
 
@@ -129,17 +142,34 @@ code, pre {
 .hero-section {
   width: 100%;
   padding: 5rem 3rem 6rem;
-  background: linear-gradient(to bottom, var(--bg-white), var(--bg-subtle));
+  background-color: var(--bg-subtle);
+  background-image:
+    linear-gradient(rgba(79, 70, 229, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 70, 229, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid var(--border-color);
   position: relative;
 
+  /* Subtle gradient overlay for depth */
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, transparent 0%, var(--bg-subtle) 90%);
+    pointer-events: none;
+  }
+
   .profile-card {
     text-align: center;
     max-width: 600px;
     position: relative;
+    z-index: 1;
 
     img {
       width: 160px;
@@ -148,12 +178,13 @@ code, pre {
       object-fit: cover;
       border: 4px solid var(--bg-white);
       margin-bottom: 2rem;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       box-shadow: var(--shadow-lg);
 
       &:hover {
-        transform: scale(1.05);
+        transform: scale(1.05) rotate(2deg);
         box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        border-color: var(--retro-pink);
       }
     }
 
@@ -302,10 +333,10 @@ main {
     overflow: hidden;
 
     &:hover {
-      border-color: var(--primary-color);
-      box-shadow: var(--shadow);
+      border-color: var(--text-primary);
+      box-shadow: var(--retro-shadow-hover);
       background: var(--bg-white);
-      transform: translateY(-2px);
+      transform: translate(-2px, -2px);
     }
 
     img {
@@ -352,16 +383,16 @@ main {
     border: 1px solid var(--border-color);
     border-radius: 0.75rem;
     box-shadow: var(--shadow-sm);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     overflow: hidden;
 
     &:hover {
-      border-color: var(--primary-color);
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-4px);
+      border-color: var(--text-primary);
+      box-shadow: var(--retro-shadow-hover);
+      transform: translate(-2px, -2px);
 
       h2 {
-        color: var(--primary-color);
+        color: var(--retro-pink);
       }
 
       .read-more {
@@ -381,14 +412,15 @@ main {
 
       .blog-date {
         display: inline-block;
+        font-family: "JetBrains Mono", monospace;
         font-size: 0.75rem;
         font-weight: 600;
-        color: var(--primary-color);
+        color: var(--retro-purple);
         text-transform: uppercase;
-        letter-spacing: 0.05em;
+        letter-spacing: -0.05em;
         padding: 0.25rem 0.75rem;
         background: var(--bg-subtle);
-        border-radius: 1rem;
+        border-radius: 0.25rem;
         border: 1px solid var(--border-color);
       }
     }
@@ -820,9 +852,10 @@ a:focus {
     position: absolute;
     left: -8rem;
     top: 0;
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
+    font-family: "JetBrains Mono", monospace;
     font-weight: 600;
-    color: var(--text-muted);
+    color: var(--text-secondary);
     text-align: right;
     width: 6rem;
     font-variant-numeric: tabular-nums;
@@ -841,9 +874,9 @@ a:focus {
       transition: all 0.2s ease;
 
       &:hover {
-        border-color: var(--primary-color);
-        box-shadow: var(--shadow);
-        transform: translateY(-2px);
+        border-color: var(--text-primary);
+        box-shadow: var(--retro-shadow-hover);
+        transform: translate(-2px, -2px);
       }
 
       img {
@@ -887,12 +920,12 @@ a:focus {
     border: 1px solid var(--border-color);
     border-radius: 0.75rem;
     box-shadow: var(--shadow-sm);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 
     &:hover {
-      border-color: var(--primary-color);
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-4px);
+      border-color: var(--text-primary);
+      box-shadow: var(--retro-shadow-hover);
+      transform: translate(-2px, -2px);
 
       .org-icon {
         transform: scale(1.05);
@@ -959,20 +992,20 @@ a:focus {
     border: 1px solid var(--border-color);
     border-radius: 0.75rem;
     box-shadow: var(--shadow-sm);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     text-align: center;
 
     &:hover {
-      border-color: var(--primary-color);
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-4px);
+      border-color: var(--text-primary);
+      box-shadow: var(--retro-shadow-hover);
+      transform: translate(-2px, -2px);
 
       .project-icon img {
         transform: scale(1.1);
       }
 
       h3 {
-        color: var(--primary-color);
+        color: var(--retro-pink);
       }
     }
 

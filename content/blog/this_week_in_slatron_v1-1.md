@@ -4,7 +4,7 @@ description = "Putting a voice inside the box with local ONNX decoding and AI pe
 date = 2026-01-11
 +++
 
-In my [last post](/building-slatron), I talked about how I built Slatron to be the robust, distributed system I always wanted. It was stable. It was efficient. It played video files perfectly.
+In my [last post](/blog/introducing-slatron), I talked about how I built Slatron to be the robust, distributed system I always wanted. It was stable. It was efficient. It played video files perfectly.
 But it was also... dead.
 A perfect playlist is boring. The magic of radio or live TV isn't just the content; it's the *glue* between the content. It's the DJ introducing a track, the news update that breaks in, or the station ID that reminds you where you are.
 So for the v1.1 update, I decided to stop building a video player and start building a broadcaster. I wanted to put a ghost in the machine.

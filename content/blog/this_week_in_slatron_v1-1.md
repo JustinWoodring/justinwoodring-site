@@ -17,7 +17,7 @@ I've introduced a first-class **AI DJ System** into Slatron. You can now create 
 We support Google Gemini for cloud TTS, but the real technical achievement this week is **Orpheus**.
 I wanted Slatron to support high-quality AI voices *without* an internet connection or an API subscription. We achieved this by integrating with [Orpheus](https://huggingface.co/isaiahbjork/orpheus-3b-0.1-ft-Q4_K_M-GGUF), a local text-to-speech system.
 Slatron communicates with a local LLM (running in LM Studio) to receive audio tokens. But here's the kicker: the audio *decoding* happens natively inside Slatron.
-I implemented the **SNAC (Multi-Scale Neural Audio Codec)** decoder directly in Rust using [ort] (ONNX Runtime). When you enable the `ml-support` feature flag, Slatron takes the raw token stream from the LLM and synthesizes the audio waveform locally on the CPU. It’s a complex pipeline of tensor operations running right inside the server binary, keeping everything offline and zero-cost.
+I implemented the **SNAC (Multi-Scale Neural Audio Codec)** decoder directly in Rust using ort, (ONNX Runtime). When you enable the `ml-support` feature flag, Slatron takes the raw token stream from the LLM and synthesizes the audio waveform locally on the CPU. It’s a complex pipeline of tensor operations running right inside the server binary, keeping everything offline and zero-cost.
 
 ## The Context
 The real power isn't just generating text; it's generating *relevant* text. I extended the **Rhai** scripting engine to support "Context Injectors".

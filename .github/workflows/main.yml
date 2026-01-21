@@ -39,5 +39,5 @@ jobs:
           ssh-keyscan -t rsa justinwoodring.com >> ~/.ssh/known_hosts
           cd ..
           ssh -i ./keys/justinwoodring_website_ssh_key justinwoodring@justinwoodring.com 'bash < /home/justinwoodring/redeploy_script.sh'
-          scp -i ./keys/justinwoodring_website_ssh_key -r public justinwoodring@justinwoodring.com:public
+          scp -i ./keys/justinwoodring_website_ssh_key -r public justinwoodring@justinwoodring.com:public/justinwoodring_site
           echo "All Done"

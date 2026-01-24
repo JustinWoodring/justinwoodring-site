@@ -584,3 +584,49 @@ main {
     .date { display: none; } /* Hide dates on mobile if crowded */
   }
 }
+
+/* --- Code Blocks & Typography inside content --- */
+.content-section {
+  max-width: 900px;
+  margin: 0 auto;
+
+  pre {
+    background: #282a36 !important; /* Match Dracula background */
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+    overflow-x: auto;
+    border: 1px solid var(--border-dim);
+    font-family: var(--font-mono);
+    line-height: 1.5;
+    
+    code {
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      font-family: inherit;
+    }
+  }
+
+  code {
+    font-family: var(--font-mono);
+    background: var(--bg-surface);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: var(--accent-cyan);
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+  }
+
+  ul, ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    color: var(--text-muted);
+    li { margin-bottom: 0.5rem; }
+  }
+}

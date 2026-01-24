@@ -1,7 +1,10 @@
 {% extends "base.html" %} {% block title %}{{ section.title }} - {% endblock
 title%} {% block primary_content %}
 <section class="content-section">
-  <h1>{{ section.title }}</h1>
+  <div class="page-banner">
+    <h1>{{ section.title }}</h1>
+    <div class="banner-subtitle">Latest Articles & Updates</div>
+  </div>
   <div class="blog-cards">
     <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->
     {% for page in section.pages %}

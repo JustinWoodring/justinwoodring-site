@@ -36,6 +36,7 @@
     ></script>
   </head>
   <body>
+    <canvas id="quantum-canvas"></canvas>
     <header class="top-nav">
       <div class="logo"><a href="{{config.base_url}}">Justin Woodring</a></div>
       <nav class="nav-links">
@@ -44,34 +45,6 @@
         <a href="{{ get_url(path='@/research/_index.md') }}"><span>Research</span></a>
       </nav>
     </header>
-
-    <div class="hero-section">
-      <div class="profile-card">
-        <img
-          src="{{ get_url(path='/assets/alt-profile-comp.jpeg') }}"
-          alt="Justin Woodring"
-        />
-        <h1 class="author">Justin Woodring</h1>
-        <p class="subtitle">PhD candidate at LSU</p>
-        <div class="social-links">
-          <a norel="" noopener="" href="https://www.linkedin.com/in/justin-woodring/">
-            <ion-icon name="logo-linkedin"></ion-icon>
-          </a>
-          <a norel="" noopener="" href="https://github.com/JustinWoodring">
-            <ion-icon name="logo-github"></ion-icon>
-          </a>
-          <a norel="" noopener="" href="https://scholar.google.com/citations?user=9edQ_EIAAAAJ&hl=en">
-            <ion-icon name="school"></ion-icon>
-          </a>
-          <a norel="" noopener="" href="https://www.youtube.com/@justinwoodring">
-            <ion-icon name="logo-youtube"></ion-icon>
-          </a>
-          <a norel="" noopener="" href="mailto:jwoodrg@gmail.com">
-            <ion-icon name="mail-sharp"></ion-icon>
-          </a>
-        </div>
-      </div>
-    </div>
 
     <main id="main-content">
       {% block primary_content %}{% endblock primary_content %}
@@ -86,5 +59,6 @@
         Justin Woodring. All rights reserved.
       </p>
     </footer>
+    <script src="/assets/js/quantum-field.js"></script>
   </body>
 </html>

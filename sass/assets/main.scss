@@ -297,6 +297,49 @@ main {
   100% { transform: rotate(360deg); }
 }
 
+/* Badge Row (Hero) */
+.badge-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    border: 1px solid var(--border-dim);
+    padding: 0.3rem 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    ion-icon {
+      font-size: 0.9rem;
+      color: var(--accent-cyan);
+    }
+  }
+}
+
+/* Expertise Grid */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+
+  .card {
+    .card-meta {
+      color: var(--accent-cyan);
+    }
+  }
+}
+
 /* --- Card Styles (Projects, Blog, etc) --- */
 .grid-layout {
   display: grid;
@@ -581,7 +624,11 @@ main {
   .list-item {
     flex-direction: column;
     gap: 1rem;
-    .date { display: none; } /* Hide dates on mobile if crowded */
+    .date { display: none; }
+  }
+
+  .expertise-grid {
+    grid-template-columns: 1fr;
   }
 }
 

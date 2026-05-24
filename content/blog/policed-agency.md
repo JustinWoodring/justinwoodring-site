@@ -36,6 +36,17 @@ The Tier 2 model must evaluate every action against core predictive metrics: Wha
 
 This operational context is vital for accurate prediction. For instance, a junior engineer might write a script to update a live database for a small, low stakes test website, which is acceptable. However, running that same script on the live corporate website of a major healthcare provider could paralyze hospital operations and threaten lives. The Tier 2 model must understand the societal weight of the environment it is policing to correctly predict which actions cross the threshold into unacceptable risk.
 
+### Converging IAM, Enterprise Roles, and Agent Capability
+We do not need to reinvent security logic to govern these entities. Enterprise IT has spent decades mastering Identity and Access Management (IAM) and the principle of least privilege, yet current AI agent architectures foolishly treat LLMs as omnipotent, root level users. This is a critical architectural failure. A policy engine must treat an AI agent exactly like a human employee, coupling traditional enterprise security roles with the model's defined skill sets.
+
+If an agent is provisioned into the system under a "Software Engineer" role, its operational profile must reflect that baseline. In human infrastructure, a junior developer does not possess systemic permission to delete a production Amazon S3 bucket or force push to a master repository. Access is explicitly gated by granular permission profiles linked to proven capabilities. 
+
+Crucially, an agent's actionable tools and technical skills must be bundled directly with these behavioral profiles. An agent cannot simply declare it possesses a capability and deploy it; the capability must be authorized within its cryptographic IAM slice. 
+
+Furthermore, true agility requires progression, but this must be tightly controlled. If an agent hits an operational bottleneck and requires escalation into a new corporate role with wider systemic reach, it cannot auto-approve its own promotion. Escalation into an elevated role must explicitly require authorizing the additional permission model through a separate, external security gate. This prevents agents from horizontally expanding their own capabilities or assuming unauthorized profiles to bypass sandboxes. 
+
+A model's ability to act must always be tightly bound to its cryptographically enforced permission profiles.
+
 ### Technical Containment and Explanatory Prompts
 To make this technical framework enforceable, we cannot rely solely on passive monitoring. The guardrails must be active, programmatic boundaries, specifically policy sandboxes and execution environments designed to isolate the model. If the Executor attempts a destructive action, the policy gateway must intercept it immediately, triggering automated penalties such as execution timeouts, token throttles, or temporary isolation in a highly restricted sandbox.
 

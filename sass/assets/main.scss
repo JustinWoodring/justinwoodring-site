@@ -310,18 +310,27 @@ main {
   .badge {
     display: flex;
     align-items: center;
-    gap: 0.35rem;
+    gap: 0.4rem;
     font-family: var(--font-mono);
     font-size: 0.7rem;
     color: var(--text-muted);
-    border: 1px solid var(--border-dim);
-    padding: 0.3rem 0.65rem;
+    background: rgba(0, 240, 255, 0.04);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    border-radius: 4px;
+    padding: 0.35rem 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    transition: all 0.2s ease;
 
     ion-icon {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--accent-cyan);
+    }
+
+    &:hover {
+      background: rgba(0, 240, 255, 0.1);
+      border-color: rgba(0, 240, 255, 0.3);
+      color: var(--text-main);
     }
   }
 }

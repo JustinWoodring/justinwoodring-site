@@ -36,7 +36,7 @@ This is what's actually on the desk. The page exists because I'd rather you judg
 
 ## Influence
 
-- **Judo and Iaido.** Two different shapes of the same discipline. Judo: yield to force, redirect it, end the contest efficiently — leverage over strength. Iaido: the cut happens once, decisively, in the space where hesitation would have lived. The way I want to write software is the way I want to move in either dojo.
+- **Judo and Iaido.** I appreciate both.
 - **Isaac Asimov.** Foundation for what it says about humanity and empire at civilizational scale. The Robot stories and Three Laws for what they say about autonomous agents and the engineering of ethics into systems that have to keep humans accountable. Both halves matter; the second half is why my research reads the way it does.
 
 ## What I've stopped using

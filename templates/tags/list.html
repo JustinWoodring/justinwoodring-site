@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Tags — {% endblock title %}
+{% block primary_content %}
+<section class="page">
+  <header class="page-header">
+    <div class="page-kicker">Taxonomy</div>
+    <h1 class="page-title">Tags</h1>
+    <p class="page-sub">Every post, sorted by the lens it was written through.</p>
+  </header>
+
+  <div class="tag-cloud">
+    {% for term in terms %}
+      <a href="{{ term.permalink | safe }}" class="tag-chip tag-chip-lg">
+        {{ term.name }} <span class="tag-count">{{ term.pages | length }}</span>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock primary_content %}

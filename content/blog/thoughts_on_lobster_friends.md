@@ -2,6 +2,8 @@
 title = "Thoughts on Agentic Lobster (Clawd/Moltbot) Friends"
 description = "Thoughts from a security researcher who wants to believe in the possibilities of AI."
 date = 2026-01-30
+[taxonomies]
+tags = ["agents"]
 +++
 
 For the uninitiated, Moltbot (formerly Clawdbot) is an agentic AI "gamechanger", effectively it's an agentic lifecycle host

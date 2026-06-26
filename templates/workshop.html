@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }} — {% endblock title %}
+{% block description %}{{ page.description }}{% endblock description %}
+{% block primary_content %}
+<section class="page">
+  <header class="page-header">
+    <div class="page-kicker">A working inventory</div>
+    <h1 class="page-title">{{ page.title }}</h1>
+    <p class="page-sub">The tools, languages, and environment I work in. The page exists because the tools are part of the work.</p>
+  </header>
+
+  <article class="content-section">
+    {{ page.content | safe }}
+  </article>
+
+  <p class="page-back"><a href="{{ config.base_url }}">← Home</a></p>
+</section>
+{% endblock primary_content %}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ config.extra.author_name }} — Writing</title>
+  <link href="{{ config.base_url }}/atom.xml" rel="self"/>
+  <link href="{{ config.base_url }}"/>
+  <id>{{ config.base_url }}/</id>
+  <updated>{{ now() | date(format="%Y-%m-%dT%H:%M:%S%z") }}</updated>
+
+  {% set blog = get_section(path="blog/_index.md") %}
+  {% for page in blog.pages | slice(end=20) %}
+  <entry>
+    <title>{{ page.title }}</title>
+    <link href="{{ page.permalink | safe }}"/>
+    <id>{{ page.permalink | safe }}</id>
+    <updated>{{ page.date | date(format="%Y-%m-%dT%H:%M:%S%z") }}</updated>
+    {% if page.taxonomies.tags %}
+    {% for tag_name in page.taxonomies.tags %}
+    {% set _tag = get_taxonomy_term(kind="tags", term=tag_name) %}
+    <category term="{{ _tag.name }}"/>
+    {% endfor %}
+    {% endif %}
+    {% if page.description %}<summary>{{ page.description }}</summary>{% endif %}
+  </entry>
+  {% endfor %}
+</feed>

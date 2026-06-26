@@ -2,6 +2,8 @@
 title = "Building Slatron: The Digital TV Scheduling and Automation System"
 description = "From Failed Prototype to Robust Distribution. "
 date = 2025-12-14
+[taxonomies]
+tags = ["systems"]
 +++
 
 I've been working on **Slatron**, a robust, distributed digital signage and TV scheduling system written in Rust. But this isn't my first attempt at solving this problem.

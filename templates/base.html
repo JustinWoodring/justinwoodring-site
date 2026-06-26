@@ -1,64 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Justin Woodring">
+    <meta name="author" content="{{ config.extra.author_name }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Systems Architecture, Quantum Cybersecurity, AI Infrastructure, Rust, Distributed Systems, OS Development, Quantum Computing, Security Engineering, Agent Infrastructure">
-    <meta name="description" content="Justin Woodring. Systems architect and cybersecurity researcher. Doctoral research at LSU's cybersecurity lab, published on quantum threat models and AI agent security.">
-    
-    <!-- Open Graph / Facebook -->
+    <meta name="keywords" content="{{ config.extra.keywords }}">
+    <meta name="description" content="{% block description %}{{ config.extra.description }}{% endblock description %}">
+    <link rel="canonical" href="{{ current_url | default(value=config.base_url) }}">
+    <link rel="alternate" type="application/atom+xml" title="{{ config.extra.author_name }} — Atom Feed" href="{{ get_url(path='atom.xml') }}">
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ current_url | default(value=config.base_url) }}">
-    <meta property="og:title" content="{% block og_title %}{% if page.title %}{{ page.title }} - {% endif %}Justin Woodring{% endblock og_title %}">
-    <meta property="og:description" content="{% block og_description %}Justin Woodring. Systems architect and cybersecurity researcher. Doctoral research at LSU's cybersecurity lab, published on quantum threat models and AI agent security.{% endblock og_description %}">
-    <meta property="og:image" content="{{ get_url(path='/assets/alt-profile-comp.jpeg') }}">
-    <meta property="og:site_name" content="Justin Woodring">
-    
+    <meta property="og:title" content="{% block og_title %}{% if page.title %}{{ page.title }} — {% endif %}{{ config.extra.author_name }}{% endblock og_title %}">
+    <meta property="og:description" content="{% block og_description %}{{ config.extra.description }}{% endblock og_description %}">
+    <meta property="og:image" content="{{ get_url(path='/assets/og-card.png') }}">
+    <meta property="og:site_name" content="{{ config.extra.author_name }}">
+
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ current_url | default(value=config.base_url) }}">
-    <meta property="twitter:title" content="{% block twitter_title %}{% if page.title %}{{ page.title }} - {% endif %}Justin Woodring{% endblock twitter_title %}">
-    <meta property="twitter:description" content="{% block twitter_description %}Justin Woodring. Systems architect and cybersecurity researcher. Doctoral research at LSU's cybersecurity lab.{% endblock twitter_description %}">
-    <meta property="twitter:image" content="{{ get_url(path='/assets/alt-profile-comp.jpeg') }}">
-    
+    <meta property="twitter:title" content="{% block twitter_title %}{% if page.title %}{{ page.title }} — {% endif %}{{ config.extra.author_name }}{% endblock twitter_title %}">
+    <meta property="twitter:description" content="{% block twitter_description %}{{ config.extra.description }}{% endblock twitter_description %}">
+    <meta property="twitter:image" content="{{ get_url(path='/assets/og-card.png') }}">
+
     {% block seo %}{% endblock seo %}
-    <title>{% block title %}{% endblock title %}Justin Woodring</title>
+    <title>{% block title %}{% endblock title %}{{ config.extra.author_name }}</title>
     <link rel="stylesheet" href="/assets/main.css" />
-    <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- JSON-LD: Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "{{ config.extra.author_name }}",
+      "url": "{{ config.extra.author_uri }}",
+      "email": "mailto:{{ config.extra.author_email }}",
+      "sameAs": [
+        "https://github.com/JustinWoodring",
+        "https://www.linkedin.com/in/justin-woodring/",
+        "https://scholar.google.com/citations?user=9edQ_EIAAAAJ&hl=en",
+        "https://www.youtube.com/@justinwoodring"
+      ],
+      "jobTitle": "PhD Candidate — Cybersecurity",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Louisiana State University"
+      },
+      "knowsAbout": [
+        "Quantum Computing",
+        "Cybersecurity",
+        "MITRE ATT&CK",
+        "AI Agents",
+        "Distributed Systems",
+        "Rust",
+        "Operating Systems"
+      ]
+    }
+    </script>
   </head>
   <body>
-    <canvas id="quantum-canvas"></canvas>
-    <header class="top-nav">
-      <div class="logo"><a href="{{config.base_url}}">Justin Woodring</a></div>
-      <nav class="nav-links">
-        <a href="{{ config.base_url }}"><span>Home</span></a>
-        <a href="{{ get_url(path='@/blog/_index.md') }}"><span>Blog</span></a>
-        <a href="{{ get_url(path='@/research/_index.md') }}"><span>Research</span></a>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <canvas id="quantum-canvas" aria-hidden="true"></canvas>
+
+    <header class="top-nav" role="banner">
+      <div class="logo">
+        <a href="{{ config.base_url }}" aria-label="{{ config.extra.author_name }} — Home">
+          <span class="logo-name">{{ config.extra.author_name }}</span>
+          <span class="logo-mark" aria-hidden="true">{{ config.extra.mark_kanji }}</span>
+        </a>
+      </div>
+      <nav class="nav-links" role="navigation" aria-label="Primary">
+        <a href="{{ config.base_url }}">Home</a>
+        <a href="{{ get_url(path='@/research/_index.md') }}">Research</a>
+        <a href="{{ get_url(path='@/blog/_index.md') }}">Writing</a>
+        <a href="{{ get_url(path='@/now.md') }}">Now</a>
+        <a href="{{ get_url(path='@/workshop.md') }}">Workshop</a>
+        <a href="/resume.pdf" class="nav-cv">CV</a>
       </nav>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" role="main">
       {% block primary_content %}{% endblock primary_content %}
     </main>
 
-    <footer class="site-footer">
-      <p>
-        Copyright &copy
-        <script type="text/javascript">
-          document.write(new Date().getFullYear());
-        </script>
-        Justin Woodring. All rights reserved.
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-mark" aria-hidden="true">{{ config.extra.mark_kanji }}</div>
+          <div class="footer-mark-reading">{{ config.extra.mark_reading }}</div>
+          <p class="footer-tag">{{ config.extra.mark_translation }}</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Find me</h4>
+          <ul>
+            <li><a href="https://github.com/JustinWoodring" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/justin-woodring/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://scholar.google.com/citations?user=9edQ_EIAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+            <li><a href="https://orcid.org/{{ config.extra.orcid }}" target="_blank" rel="noopener">ORCID</a></li>
+            <li><a href="https://www.youtube.com/@justinwoodring" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="mailto:{{ config.extra.author_email }}">{{ config.extra.author_email }}</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>This site</h4>
+          <ul>
+            <li><a href="/atom.xml">Atom feed</a></li>
+            <li><a href="/sitemap.xml">Sitemap</a></li>
+            <li><a href="/.well-known/security.txt">security.txt</a></li>
+            <li><a href="{{ config.extra.pgp_key_url }}">PGP key</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="copyright">
+        © <script>document.write(new Date().getFullYear());</script> {{ config.extra.author_name }}.
+        Built with <a href="https://www.getzola.org" target="_blank" rel="noopener">Zola</a>.
+        Quietly.
       </p>
     </footer>
+
     <script src="/assets/js/quantum-field.js"></script>
   </body>
 </html>

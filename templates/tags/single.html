@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}{{ term.name }} — {% endblock title %}
+{% block primary_content %}
+<section class="page">
+  <header class="page-header">
+    <div class="page-kicker">Lens</div>
+    <h1 class="page-title">{{ term.name }}</h1>
+    <p class="page-sub">{{ term.pages | length }} post{% if term.pages | length != 1 %}s{% endif %} written through this lens.</p>
+  </header>
+
+  <div class="blog-list">
+    {% for page in term.pages %}
+    <article class="blog-entry">
+      <div class="blog-entry-meta">
+        <time class="blog-entry-date">{{ page.date | date(format="%b %Y") }}</time>
+      </div>
+      <h2 class="blog-entry-title">
+        <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+      </h2>
+      {% if page.description %}
+        <p class="blog-entry-excerpt">{{ page.description }}</p>
+      {% elif page.summary %}
+        <p class="blog-entry-excerpt">{{ page.summary }}</p>
+      {% endif %}
+      <a href="{{ page.permalink | safe }}" class="blog-entry-more">Read →</a>
+    </article>
+    {% endfor %}
+  </div>
+
+  <p class="page-back"><a href="{{ config.base_url }}">← Home</a></p>
+</section>
+{% endblock primary_content %}

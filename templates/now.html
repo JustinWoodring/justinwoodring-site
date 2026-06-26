@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }} — {% endblock title %}
+{% block description %}{{ page.description }}{% endblock description %}
+{% block primary_content %}
+<section class="page">
+  <header class="page-header">
+    <div class="page-kicker">{{ page.date | date(format="%B %Y") }}</div>
+    <h1 class="page-title">{{ page.title }}</h1>
+    <p class="page-sub">A snapshot of where my attention sits this quarter. Updated when the picture changes enough to be honest.</p>
+  </header>
+
+  <article class="content-section">
+    {{ page.content | safe }}
+  </article>
+
+  <p class="page-back"><a href="{{ config.base_url }}">← Home</a></p>
+</section>
+{% endblock primary_content %}

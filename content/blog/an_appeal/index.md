@@ -4,6 +4,8 @@ description = "An appeal to those who don't specialize in technology but have th
 date = 2024-06-04
 [extra]
 image = "https://justinwoodring.com/blog/an_appeal/dil_fridge.jpg"
+[taxonomies]
+tags = ["theory"]
 +++
 
 It's an understatement to say that the Fourth Industrial Revolution, as some have so aptly titled it, will have massive implications on our daily lives. But for many this isn't so obvious, AI remains a magic fairy capable of granting wishes and quantum computing is something relegated to the likes of rocket science. 

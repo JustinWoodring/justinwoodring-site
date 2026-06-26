@@ -2,6 +2,8 @@
 title = "Clair Obscur: Expedition 33 - A Love Letter to Art Itself" 
 description = "A brief essay on the key themes and ideas in Clair Obscur: Expedition 33 and the love of art." 
 date = 2025-05-15
+[taxonomies]
+tags = ["reflections"]
 +++
 
 **Spoilers: The intent of this article is not discuss the story in great detail, however it

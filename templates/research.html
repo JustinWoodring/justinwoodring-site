@@ -1,28 +1,31 @@
-{% extends "base.html" %} {% block title %}{{ section.title }} - {% endblock
-title %} {% block primary_content %}
-<section class="content-section">
-  <div class="page-banner">
-    <h1>{{ section.title }}</h1>
-    <div class="banner-subtitle">Publications & Findings</div>
-  </div>
-  <div class="blog-cards">
-    <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->
+{% extends "base.html" %}
+{% block title %}{{ section.title }} — {% endblock title %}
+{% block primary_content %}
+<section class="page">
+  <header class="page-header">
+    <div class="page-kicker">Research</div>
+    <h1 class="page-title">{{ section.title }}</h1>
+    <p class="page-sub">Peer-reviewed publications, posters, and frameworks. Citations with DOI where available.</p>
+  </header>
+
+  <ol class="pub-list pub-list-page">
     {% for page in section.pages %}
-    <article class="blog-card research-card">
-      <a href="{{ page.permalink | safe }}">
-        <div class="blog-card-header">
-          <time class="blog-date">{{ page.date }}</time>
-        </div>
-        <h2>{{ page.title }}</h2>
-        {% if page.description %}
-        <p class="blog-excerpt">{{ page.description }}</p>
-        {% elif page.summary %}
-        <p class="blog-excerpt">{{ page.summary }}</p>
+    <li class="pub">
+      <div class="pub-year">{{ page.date | date(format="%Y") }}</div>
+      <div class="pub-body">
+        <h3 class="pub-title"><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h3>
+        {% if page.extra.authors %}
+        <p class="pub-authors">{{ page.extra.authors | safe }}</p>
         {% endif %}
-        <span class="read-more">Read article →</span>
-      </a>
-    </article>
+        {% if page.extra.venue %}
+        <p class="pub-venue">{{ page.extra.venue | safe }}</p>
+        {% endif %}
+        <p class="pub-actions">
+          <a href="{{ page.permalink | safe }}">Read summary →</a>
+        </p>
+      </div>
+    </li>
     {% endfor %}
-  </div>
+  </ol>
 </section>
 {% endblock primary_content %}

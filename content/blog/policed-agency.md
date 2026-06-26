@@ -2,6 +2,8 @@
 title = "What It Means to Police AI Agency"
 description = "Agency in replicating human patterns is easy, naturally the solution must be compliance in human patterns."
 date = 2026-05-23
+[taxonomies]
+tags = ["agents"]
 +++
 
 "Policed Agency" is an emerging paradigm in the world of autonomous agents. As AI becomes more independent, we face an urgent need to design architectural guardrails that protect both the agents and the humans they interact with. 

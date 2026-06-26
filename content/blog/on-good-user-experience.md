@@ -1,7 +1,9 @@
 +++
 title = "On Good User Experience" 
 description = "How User Experience should go beyond Digital Experience"
-date = 2024-10-25 
+date = 2024-10-25
+[taxonomies]
+tags = ["reflections"]
 +++
 
 Since the advent of the internet the rapid proliferation of e-commerce based entities has exploded. Arguably speaking,

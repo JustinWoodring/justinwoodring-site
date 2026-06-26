@@ -1,0 +1,11 @@
+Contact: mailto:hello@justinwoodring.com
+Contact: https://github.com/JustinWoodring
+Encryption: https://justinwoodring.com/assets/pgp.asc
+Preferred-Languages: en
+Canonical: https://justinwoodring.com/.well-known/security.txt
+Expires: 2027-12-31T23:59:59z
+Acknowledgments: https://justinwoodring.com/blog/policed-agency/
+Policy: https://justinwoodring.com/blog/thoughts_on_lobster_friends/
+
+# Coordinated disclosure welcomed. Please encrypt sensitive reports with the PGP key above.
+# Expect a response within 7 days; substantive reports will be acknowledged publicly with permission.

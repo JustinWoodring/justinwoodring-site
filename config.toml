@@ -1,14 +1,34 @@
-# The URL the site will be built for
+# Justin Woodring site config
+
 base_url = "https://justinwoodring.com"
+title = "Justin Woodring"
 
-# Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
-
-# Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
+
+generate_sitemap = true
+generate_robots_txt = true
+generate_feeds = true
+feed_limit = 25
+
+default_language = "en"
+
+taxonomies = [
+    { name = "tags", render = true },
+]
 
 [markdown.highlighting]
 theme = "dracula"
 
 [extra]
-# Put all your custom variables here
+author_name = "Justin Woodring"
+author_email = "hello@justinwoodring.com"
+author_uri = "https://justinwoodring.com"
+orcid = "0000-0000-0000-0000"
+pgp_fingerprint = "0000 0000 0000 0000 0000 0000 0000 0000"
+pgp_key_url = "/assets/pgp.asc"
+description = "Justin Woodring. PhD researcher at LSU's cybersecurity lab. Working on quantum threat modeling, AI agent governance, and the orchestration layers for autonomous software production."
+keywords = "Quantum Computing, Cybersecurity, AI Agents, Rust, Distributed Systems, Agent Orchestration, Autonomous Software, MITRE ATT&CK, LSU, Security Research, Scholar-Craftsman"
+mark_kanji = "守破離"
+mark_reading = "shu-ha-ri"
+mark_translation = "master the rules. break them. transcend them."

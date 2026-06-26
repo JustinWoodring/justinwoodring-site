@@ -2,6 +2,8 @@
 title = "Getting Started in Quantum Computing"
 description = "A collection of resources and thoughts for beginners getting started in quantum computing"
 date = 2023-12-15
+[taxonomies]
+tags = ["physics"]
 +++
 
 So you've decided to learn about quantum computing. This is the first step of a major journey

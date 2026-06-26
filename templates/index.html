@@ -1,213 +1,333 @@
-{% extends "base.html" %} 
-{% block title %}{% endblock title %} 
+{% extends "base.html" %}
+{% block title %}{% endblock title %}
 {% block primary_content %}
 
-<div class="hero-section">
-  <canvas id="hero-canvas"></canvas>
-  <div class="profile-frame">
-    <img src="{{ get_url(path='/assets/alt-profile-comp.jpeg') }}" alt="Justin Woodring" />
-  </div>
-  
-  <h1 class="glitch-text" data-text="JUSTIN WOODRING">JUSTIN WOODRING</h1>
-  <div class="subtitle">Systems Architecture • Quantum Cybersecurity • AI Infrastructure</div>
-  
-  <div class="social-row">
-    <a href="https://www.linkedin.com/in/justin-woodring/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
-    <a href="https://github.com/JustinWoodring" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
-    <a href="https://scholar.google.com/citations?user=9edQ_EIAAAAJ&hl=en" target="_blank"><ion-icon name="school"></ion-icon></a>
-    <a href="https://www.youtube.com/@justinwoodring" target="_blank"><ion-icon name="logo-youtube"></ion-icon></a>
-    <a href="mailto:jwoodrg@gmail.com"><ion-icon name="mail-sharp"></ion-icon></a>
+{# ─── Hero ─── #}
+<section class="hero" aria-labelledby="hero-name">
+  <div class="hero-mark" aria-hidden="true">
+    <span class="hero-mark-kanji">{{ config.extra.mark_kanji }}</span>
+    <span class="hero-mark-reading">{{ config.extra.mark_reading }}</span>
   </div>
 
-  <p class="intro-text">
-    Building secure infrastructure at the intersection of quantum computing, security, and systems. Doctoral research at LSU's cybersecurity lab with published work on quantum threat models, AI agent trust, and distributed systems.
+  <h1 id="hero-name" class="hero-name">{{ config.extra.author_name }}</h1>
+  <p class="hero-romanization" aria-hidden="true">ジャスティン・ウッドリング</p>
+
+  <p class="hero-role">
+    <span>PhD Candidate</span>
+    <span class="hero-role-sep" aria-hidden="true">·</span>
+    <span>LSU Cybersecurity Lab</span>
   </p>
+
+  <p class="hero-thesis">
+    Studying quantum threat models and AI agent trust.<br>
+    Building the orchestration layers that make autonomous software production real.<br>
+    <span class="hero-thesis-soft">From photons to syntax.</span>
+  </p>
+
   <div class="hero-actions">
-    <a href="#projects" class="btn primary">View Projects</a>
-    <a href="{{ get_url(path='@/research/_index.md') }}" class="btn">Research</a>
+    <a href="{{ get_url(path='@/research/_index.md') }}" class="btn btn-primary">Read the research</a>
+    <a href="{{ get_url(path='@/now.md') }}" class="btn">What's on now</a>
+    <a href="/resume.pdf" class="btn">Download CV</a>
   </div>
 
-  <div class="badge-row">
-    <span class="badge"><ion-icon name="shield-checkmark-outline"></ion-icon> Cybersecurity Research</span>
-    <span class="badge"><ion-icon name="server-outline"></ion-icon> Systems Architecture</span>
-    <span class="badge"><ion-icon name="people-outline"></ion-icon> Founder</span>
+  <div class="hero-social" aria-label="Profiles and contact">
+    <a href="https://github.com/JustinWoodring" target="_blank" rel="noopener" aria-label="GitHub"><ion-icon name="logo-github"></ion-icon></a>
+    <a href="https://www.linkedin.com/in/justin-woodring/" target="_blank" rel="noopener" aria-label="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
+    <a href="https://scholar.google.com/citations?user=9edQ_EIAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar"><ion-icon name="school"></ion-icon></a>
+    <a href="https://orcid.org/{{ config.extra.orcid }}" target="_blank" rel="noopener" aria-label="ORCID"><ion-icon name="ribbon-outline"></ion-icon></a>
+    <a href="https://www.youtube.com/@justinwoodring" target="_blank" rel="noopener" aria-label="YouTube"><ion-icon name="logo-youtube"></ion-icon></a>
+    <a href="mailto:{{ config.extra.author_email }}" aria-label="Email"><ion-icon name="mail-sharp"></ion-icon></a>
   </div>
-</div>
+</section>
 
-<div class="section-header">
-  <h2><span>01.</span> Projects</h2>
-  <a href="https://github.com/JustinWoodring" class="view-all">View Github →</a>
-</div>
+{# ─── Selected Publications ─── #}
+<section class="section" aria-labelledby="section-pubs">
+  <header class="section-header">
+    <h2 id="section-pubs"><span class="section-kicker">01.</span> Selected Publications</h2>
+    <a href="{{ get_url(path='@/research/_index.md') }}" class="section-link">All research →</a>
+  </header>
 
-<div class="grid-layout" id="projects">
-  <!-- Slatron -->
-  <a href="https://github.com/JustinWoodring/slatron/" target="_blank" class="card">
-    <div class="card-meta">Distributed Systems / Embedded AI</div>
-    <h3>Slatron</h3>
-    <p>Distributed real-time broadcast infrastructure with embedded AI. Multi-tier architecture with Rhai scripting, ONNX-based audio inference, zero-downtime scheduling, and multi-arch cross-compilation.</p>
-    <div class="card-link">
-      <ion-icon name="logo-github"></ion-icon> Source Code
-    </div>
-  </a>
-
-  <!-- Capibara -->
-  <a href="https://capibara.tools/" target="_blank" class="card">
-    <div class="card-meta">Tooling / Rust</div>
-    <h3>Capibara</h3>
-    <p>Rust-powered toolchain for C codebases with documentation generation, static analysis, and IDE integration. Rethinking how low-level infrastructure is developed and maintained.</p>
-    <div class="card-link">
-      <ion-icon name="code-slash-outline"></ion-icon> capibara.tools
-    </div>
-  </a>
-
-  <!-- Qubit Simulator -->
-  <a href="https://justinwoodring.com/qubit-simulator/" target="_blank" class="card">
-    <div class="card-meta">Quantum / Visualization</div>
-    <h3>Qubit Simulator</h3>
-    <p>Interactive 3D Bloch sphere visualization for quantum state pedagogy. A tool for making quantum computing tangible and accessible.</p>
-    <div class="card-link">
-      <ion-icon name="cube-outline"></ion-icon> Live Demo
-    </div>
-  </a>
-
-  <!-- Lorefire -->
-  <a href="https://github.com/JustinWoodring/lorefire/" target="_blank" class="card">
-    <div class="card-meta">Local-First AI / Orchestration</div>
-    <h3>Lorefire</h3>
-    <p>Local-first AI orchestration pipeline: on-device transcription, LLM-powered semantic analysis, encrypted storage. A study in private, sovereign AI infrastructure where users control their data and models.</p>
-    <div class="card-link">
-      <ion-icon name="logo-github"></ion-icon> Source Code
-    </div>
-  </a>
-</div>
-
-<div class="section-header">
-  <h2><span>02.</span> Domains of Depth</h2>
-</div>
-
-<div class="expertise-grid">
-  <div class="card">
-    <div class="card-meta">Substrate</div>
-    <h3>Systems Architecture</h3>
-    <p>Distributed real-time infrastructure built with Rust. Custom runtimes, cross-compilation pipelines, embedded services, and systems-level engineering for reliable, performant platforms.</p>
-  </div>
-  <div class="card">
-    <div class="card-meta">Defense</div>
-    <h3>Quantum Cybersecurity</h3>
-    <p>Doctoral research in LSU's cybersecurity lab. Published the QATT&CK framework adapting MITRE ATT&CK for quantum computing threat models. Research on cryptographic infrastructure and AI agent trust.</p>
-  </div>
-  <div class="card">
-    <div class="card-meta">Cognition</div>
-    <h3>AI Infrastructure</h3>
-    <p>Control plane design for autonomous software. Agent safety models, capability-gated delegation, local-first LLM pipelines. Published on policed agency, a security model for AI agent trust.</p>
-  </div>
-</div>
-
-<div style="height: 4rem;"></div>
-
-<div class="section-header">
-  <h2><span>03.</span> Background & Research</h2>
-</div>
-
-<div class="list-item">
-    <div class="icon-box">
-        <img src="https://itservice.lsu.edu/TDPortal/Images/Viewer?fileName=0d9805f8-84ce-4007-ba45-3debd575f266.png" alt="LSU Logo"/>
-    </div>
-    <div class="content">
-        <h4>Louisiana State University</h4>
-        <span class="role">PhD Candidate — Cybersecurity Lab</span>
-        <p>Doctoral research in the cybersecurity lab. Developing security frameworks for next-generation computing with a focus on quantum threat modeling, AI agent trust, and cryptographic infrastructure.</p>
-    </div>
-    <div class="date">2023 — Present</div>
-</div>
-
-<div class="list-item">
-    <div class="icon-box">
-        <img src="https://itservice.lsu.edu/TDPortal/Images/Viewer?fileName=0d9805f8-84ce-4007-ba45-3debd575f266.png" alt="LSU Logo"/>
-    </div>
-    <div class="content">
-        <h4>Louisiana State University</h4>
-        <span class="role">Master of Science</span>
-        <p>Advanced Computer Science studies.</p>
-    </div>
-    <div class="date">2023 — 2025</div>
-</div>
-
-<div class="list-item">
-    <div class="icon-box">
-        <img src="https://www.southeastern.edu/wp-content/uploads/office-of-university-marketing-and-communications/university-logo-mark.svg" alt="SELU Logo"/>
-    </div>
-    <div class="content">
-        <h4>Southeastern Louisiana University</h4>
-        <span class="role">BS Computer Science</span>
-        <p>Minors in Physics and Math.</p>
-    </div>
-    <div class="date">2018 — 2022</div>
-</div>
-
-<div class="list-item">
-    <div class="icon-box">
-        <img src="https://raw.githubusercontent.com/JustinWoodring/quantumbr-site/main/public/qbr.png" alt="quantumBR"/>
-    </div>
-    <div class="content">
-        <h4>quantumBR</h4>
-        <span class="role">Founder</span>
-        <p>Founded and led Baton Rouge's quantum computing community. Built a local ecosystem for quantum education and collaboration spanning meetups, research discussions, and industry connections.</p>
-    </div>
-    <div class="date">Organization</div>
-</div>
-
-<div class="list-item">
-    <div class="icon-box">
-        <ion-icon name="document-text-outline"></ion-icon>
-    </div>
-    <div class="content">
-        <h4>QATT&CK</h4>
-        <span class="role">Quantum Cybersecurity Framework</span>
-        <p>Novel extension of MITRE ATT&CK for utility-scale quantum computer threat modeling. Presented at Q-NET SYMPOSIUM 2025.</p>
-    </div>
-    <div class="date">Published</div>
-</div>
-
-<div style="height: 4rem;"></div>
-
-<div class="section-header">
-  <h2><span>04.</span> From the Blog</h2>
-  <a href="{{ get_url(path='@/blog/_index.md') }}" class="view-all">All Posts →</a>
-</div>
-
-<div class="blog-cards">
-  <article class="blog-card">
-    <a href="{{ get_url(path='@/blog/policed-agency.md') }}">
-      <div class="blog-card-header">
-        <time class="blog-date">May 2026</time>
+  <ol class="pub-list">
+    <li class="pub">
+      <div class="pub-year">2024</div>
+      <div class="pub-body">
+        <h3 class="pub-title">
+          Enhancing privacy policy comprehension through Privacify: A user-centric approach using advanced language models
+        </h3>
+        <p class="pub-authors">
+          Ali-Gombi, A., <span class="pub-author-self">Woodring, J.</span>, Perez, K.
+        </p>
+        <p class="pub-venue">
+          <em>Computers &amp; Security</em>, Volume 145, 2024.
+          <a href="https://doi.org/10.1016/j.cose.2024.103997" target="_blank" rel="noopener">doi:10.1016/j.cose.2024.103997</a>
+        </p>
       </div>
-      <h2>What It Means to Police AI Agency</h2>
-      <p class="blog-excerpt">A formal security architecture for AI agent delegation: capability-based IAM, asymmetric trust protocols, multi-tier sandboxing. Bridging quantum security thinking with AI system design.</p>
-      <span class="read-more">Read article →</span>
-    </a>
-  </article>
-  <article class="blog-card">
-    <a href="{{ get_url(path='@/blog/this_week_in_slatron_v1-1.md') }}">
-      <div class="blog-card-header">
-        <time class="blog-date">Jan 2026</time>
-      </div>
-      <h2>This Week in Slatron v1.1</h2>
-      <p class="blog-excerpt">Embedded AI inference in distributed broadcast infrastructure with ONNX decoding, Rhai scripting, and audio ducking. Systems engineering at the edge.</p>
-      <span class="read-more">Read article →</span>
-    </a>
-  </article>
-  <article class="blog-card">
-    <a href="{{ get_url(path='@/blog/an_appeal/index.md') }}">
-      <div class="blog-card-header">
-        <time class="blog-date">Jun 2024</time>
-      </div>
-      <h2>An Appeal to Consider The Fourth Industrial Revolution</h2>
-      <p class="blog-excerpt">Why quantum computing and AI matter for economic and technological sovereignty. A vision for how we build the next century's infrastructure.</p>
-      <span class="read-more">Read article →</span>
-    </a>
-  </article>
-</div>
+    </li>
 
-<script src="/assets/js/hero-particles.js"></script>
+    <li class="pub">
+      <div class="pub-year">2023</div>
+      <div class="pub-body">
+        <h3 class="pub-title">
+          Improved spectral photometer for undergraduate observations of atmospheric infrared heat flux and greenhouse gas absorption bands
+        </h3>
+        <p class="pub-authors">
+          Blanchard, G. T., Bowlsbey, B. A., Dyess, J. R., Rumsey, R. D., <span class="pub-author-self">Woodring, J. B.</span>
+        </p>
+        <p class="pub-venue">
+          <em>American Journal of Physics</em>, 91(9), 708–713, 2023.
+          <a href="https://pubs.aip.org/aapt/ajp/article-abstract/91/9/708/2906665/" target="_blank" rel="noopener">doi:10.1119/5.0105418</a>
+        </p>
+      </div>
+    </li>
+
+    <li class="pub pub-poster">
+      <div class="pub-year">2025</div>
+      <div class="pub-body">
+        <h3 class="pub-title">
+          QATT&amp;CK: Threat-Intelligence for Understanding the Hybridization of Utility-Scale Quantum Computers Based on ATT&amp;CK
+        </h3>
+        <p class="pub-authors"><span class="pub-author-self">Woodring, J.</span> et al.</p>
+        <p class="pub-venue">
+          <em>Q-NET Symposium 2025</em> — Poster.
+          <a href="/research/QATTACK_Poster/QATTACK_Poster.pdf">PDF</a>
+        </p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+{# ─── Selected Projects ─── #}
+<section class="section" aria-labelledby="section-projects">
+  <header class="section-header">
+    <h2 id="section-projects"><span class="section-kicker">02.</span> Selected Projects</h2>
+    <a href="https://github.com/JustinWoodring" target="_blank" rel="noopener" class="section-link">All on GitHub →</a>
+  </header>
+
+  <div class="project-grid">
+    <article class="project">
+      <header class="project-head">
+        <span class="project-tag">Distributed Systems / Rust / ONNX</span>
+        <h3>Slatron</h3>
+      </header>
+      <p>
+        Distributed real-time broadcast infrastructure with embedded AI.
+        Rhai scripting, local ONNX-based audio inference, audio ducking, zero-downtime scheduling,
+        multi-arch cross-compilation to a single self-contained binary.
+      </p>
+      <footer class="project-foot">
+        <a href="https://github.com/JustinWoodring/slatron/" target="_blank" rel="noopener"><ion-icon name="logo-github"></ion-icon> Source</a>
+        <a href="{{ get_url(path='@/blog/introducing_slatron.md') }}">Read the build notes →</a>
+      </footer>
+    </article>
+
+    <article class="project">
+      <header class="project-head">
+        <span class="project-tag">Rust / Tooling</span>
+        <h3>Capibara</h3>
+      </header>
+      <p>
+        Rust-powered toolchain for C codebases: documentation generation, static analysis,
+        IDE integration. Rethinking how low-level infrastructure is documented and maintained.
+      </p>
+      <footer class="project-foot">
+        <a href="https://capibara.tools/" target="_blank" rel="noopener"><ion-icon name="code-slash-outline"></ion-icon> capibara.tools</a>
+        <a href="{{ get_url(path='@/blog/rewriting-the-capibara-web-api-in-rust.md') }}">Why Rust →</a>
+      </footer>
+    </article>
+
+    <article class="project">
+      <header class="project-head">
+        <span class="project-tag">Local-First AI / Encryption</span>
+        <h3>Lorefire</h3>
+      </header>
+      <p>
+        Local-first AI orchestration pipeline: on-device transcription, LLM-powered semantic
+        analysis, encrypted storage. A study in private, sovereign AI infrastructure where the
+        user controls data and models end-to-end.
+      </p>
+      <footer class="project-foot">
+        <a href="https://github.com/JustinWoodring/lorefire/" target="_blank" rel="noopener"><ion-icon name="logo-github"></ion-icon> Source</a>
+      </footer>
+    </article>
+
+    <article class="project">
+      <header class="project-head">
+        <span class="project-tag">Quantum / Pedagogy</span>
+        <h3>Qubit Simulator</h3>
+      </header>
+      <p>
+        Interactive 3D Bloch sphere visualization for quantum state pedagogy.
+        Built to make quantum computing tangible — the kind of tool I wished I'd had when I started.
+      </p>
+      <footer class="project-foot">
+        <a href="https://justinwoodring.com/qubit-simulator/" target="_blank" rel="noopener"><ion-icon name="cube-outline"></ion-icon> Live demo</a>
+      </footer>
+    </article>
+
+    <article class="project">
+      <header class="project-head">
+        <span class="project-tag">Autonomy / Orchestration <span class="project-status">in progress</span></span>
+        <h3>Autopilotv</h3>
+      </header>
+      <p>
+        <!-- TODO: replace with the real one-line framing of what Autopilotv is -->
+        Orchestration primitives for autonomous software production pipelines.
+        Working toward agile software dark factories — software that ships with minimal human touchpoints,
+        while keeping the human accountable for what it produces.
+      </p>
+      <footer class="project-foot">
+        <a href="#" aria-disabled="true" class="muted"><ion-icon name="lock-closed-outline"></ion-icon> Private · in progress</a>
+      </footer>
+    </article>
+  </div>
+</section>
+
+{# ─── Selected Writing (across lenses) ─── #}
+<section class="section" aria-labelledby="section-writing">
+  <header class="section-header">
+    <h2 id="section-writing"><span class="section-kicker">03.</span> Selected Writing</h2>
+    <a href="{{ get_url(path='@/blog/_index.md') }}" class="section-link">All writing →</a>
+  </header>
+  <p class="section-note">
+    I write across five lenses — theory, physics, systems, agents, reflections. The breadth is intentional.
+  </p>
+
+  <div class="writing-lenses">
+    <div class="lens">
+      <div class="lens-label">Agents</div>
+      <a href="{{ get_url(path='@/blog/policed-agency.md') }}" class="lens-post">
+        <h4>What It Means to Police AI Agency</h4>
+        <p>A formal security architecture for AI agent delegation: capability-gated IAM, multi-tier escalation, asymmetric trust protocols.</p>
+      </a>
+      <a href="{{ get_url(path='@/blog/thoughts_on_lobster_friends.md') }}" class="lens-post">
+        <h4>Thoughts on Agentic Lobster Friends</h4>
+        <p>Notes from a security researcher who wants to believe — and the surface area that makes belief expensive.</p>
+      </a>
+    </div>
+
+    <div class="lens">
+      <div class="lens-label">Physics</div>
+      <a href="{{ get_url(path='@/blog/understanding-quantum-phase-kickback/index.md') }}" class="lens-post">
+        <h4>Understanding Quantum Phase Kickback</h4>
+        <p>The unsung hero of Shor's and Grover's, explained with the matrix algebra most resources skip.</p>
+      </a>
+      <a href="{{ get_url(path='@/blog/getting_started_in_quantum_computing.md') }}" class="lens-post">
+        <h4>Getting Started in Quantum Computing</h4>
+        <p>A grounded reading list and a realistic timeline for beginners.</p>
+      </a>
+    </div>
+
+    <div class="lens">
+      <div class="lens-label">Systems</div>
+      <a href="{{ get_url(path='@/blog/introducing_slatron.md') }}" class="lens-post">
+        <h4>Building Slatron</h4>
+        <p>From a failed prototype to a robust distributed system in Rust — cross-compilation, embedded UI, Rhai scripting.</p>
+      </a>
+      <a href="{{ get_url(path='@/blog/this_week_in_slatron_v1-1.md') }}" class="lens-post">
+        <h4>This Week in Slatron v1.1</h4>
+        <p>Embedding a local ONNX-based AI DJ into broadcast infrastructure.</p>
+      </a>
+    </div>
+
+    <div class="lens">
+      <div class="lens-label">Theory</div>
+      <a href="{{ get_url(path='@/blog/lisp-did-programming-right.md') }}" class="lens-post">
+        <h4>How Lisp Did Programming Right</h4>
+        <p>On REPL-driven development, the order of operations, and first-class functions.</p>
+      </a>
+      <a href="{{ get_url(path='@/blog/why_scala.md') }}" class="lens-post">
+        <h4>Why Scala</h4>
+        <p>A post-mortem on a language's hype, and what its dual paradigms actually buy you.</p>
+      </a>
+    </div>
+
+    <div class="lens">
+      <div class="lens-label">Reflections</div>
+      <a href="{{ get_url(path='@/blog/clair-obscur-expedition-33.md') }}" class="lens-post">
+        <h4>Clair Obscur: Expedition 33 — A Love Letter to Art Itself</h4>
+        <p>On Chroma, Lumina, the Canvas, and the soul of a being imbued in art.</p>
+      </a>
+      <a href="{{ get_url(path='@/blog/on-good-user-experience.md') }}" class="lens-post">
+        <h4>On Good User Experience</h4>
+        <p>UX as customer experience — and the dignity of treating the user like they matter.</p>
+      </a>
+    </div>
+
+    <div class="lens">
+      <div class="lens-label">Manifesto</div>
+      <a href="{{ get_url(path='@/blog/an_appeal/index.md') }}" class="lens-post">
+        <h4>An Appeal to Consider the Fourth Industrial Revolution</h4>
+        <p>Why quantum computing and AI matter — written for the people with the power to act, not the people who already agree.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+{# ─── Background ─── #}
+<section class="section" aria-labelledby="section-bg">
+  <header class="section-header">
+    <h2 id="section-bg"><span class="section-kicker">04.</span> Background</h2>
+  </header>
+
+  <div class="bg-grid">
+    <div class="bg-col">
+      <h3 class="bg-h">Education</h3>
+      <ul class="bg-list">
+        <li>
+          <div class="bg-when">2023 — present</div>
+          <div class="bg-what">
+            <strong>PhD Candidate — Cybersecurity Lab</strong>
+            <span>Louisiana State University</span>
+          </div>
+        </li>
+        <li>
+          <div class="bg-when">2023 — 2025</div>
+          <div class="bg-what">
+            <strong>MS, Computer Science</strong>
+            <span>Louisiana State University</span>
+          </div>
+        </li>
+        <li>
+          <div class="bg-when">2018 — 2022</div>
+          <div class="bg-what">
+            <strong>BS, Computer Science</strong>
+            <span>Southeastern Louisiana University · Minors in Physics &amp; Mathematics</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="bg-col">
+      <h3 class="bg-h">Community</h3>
+      <ul class="bg-list">
+        <li>
+          <div class="bg-what">
+            <strong>quantumBR — Founder</strong>
+            <span>Founded and led Baton Rouge's quantum computing community: meetups, research discussions, industry partnerships. Established a local ecosystem for quantum education and collaboration.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="bg-col">
+      <h3 class="bg-h">Talks</h3>
+      <ul class="bg-list">
+        <li>
+          <div class="bg-when">2025</div>
+          <div class="bg-what">
+            <strong>QATT&amp;CK</strong>
+            <span>Q-NET Symposium 2025 — Poster</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{# ─── Footer of the page — the mark, restated ─── #}
+<section class="closing" aria-hidden="true">
+  <div class="closing-mark">{{ config.extra.mark_kanji }}</div>
+  <div class="closing-translation">{{ config.extra.mark_translation }}</div>
+</section>
+
 {% endblock primary_content %}

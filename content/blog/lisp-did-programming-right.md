@@ -2,6 +2,8 @@
 title = "Common Lisp - How Lisp did Programming Right" 
 description = "What Common Lisp did right and why it's still a programmer's best friend" 
 date = 2024-09-02
+[taxonomies]
+tags = ["theory"]
 +++
 
 Lisp short for the List Processing Language, is viewed as a relic in today's

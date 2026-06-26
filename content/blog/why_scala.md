@@ -2,6 +2,8 @@
 title = "Why Scala: The Coder's Swiss Army Knife"
 description = "A post-mortem analysis of the death of Scala's hype"
 date = 2023-10-12
+[taxonomies]
+tags = ["theory"]
 +++
 
 Scala. The heyday of this language has come and gone. Yet despite a seemingly strong public

@@ -1,26 +1,46 @@
-{% extends "base.html" %} {% block title %}{{ section.title }} - {% endblock
-title%} {% block primary_content %}
-<section class="content-section">
-  <div class="page-banner">
-    <h1>{{ section.title }}</h1>
-    <div class="banner-subtitle">Latest Articles & Updates</div>
-  </div>
-  <div class="blog-cards">
-    <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->
+{% extends "base.html" %}
+{% block title %}{{ section.title }} — {% endblock title %}
+{% block primary_content %}
+<section class="page">
+  <header class="page-header">
+    <div class="page-kicker">Writing</div>
+    <h1 class="page-title">{{ section.title }}</h1>
+    <p class="page-sub">Essays across five lenses: theory, physics, systems, agents, reflections.</p>
+  </header>
+
+  {% set taxonomy_terms = get_taxonomy(kind="tags") %}
+  {% if taxonomy_terms %}
+  <nav class="lens-filter" aria-label="Filter by lens">
+    <a href="{{ section.permalink | safe }}" class="lens-chip {% if not current_tag %}is-active{% endif %}">All</a>
+    {% for item in taxonomy_terms.items %}
+      <a href="{{ item.permalink | safe }}" class="lens-chip {% if current_tag and current_tag == item.slug %}is-active{% endif %}">{{ item.name }}</a>
+    {% endfor %}
+  </nav>
+  {% endif %}
+
+  <div class="blog-list">
     {% for page in section.pages %}
-    <article class="blog-card">
-      <a href="{{ page.permalink | safe }}">
-        <div class="blog-card-header">
-          <time class="blog-date">{{ page.date }}</time>
-        </div>
-        <h2>{{ page.title }}</h2>
-        {% if page.description %}
-        <p class="blog-excerpt">{{ page.description }}</p>
-        {% elif page.summary %}
-        <p class="blog-excerpt">{{ page.summary }}</p>
+    <article class="blog-entry">
+      <div class="blog-entry-meta">
+        <time class="blog-entry-date">{{ page.date | date(format="%b %Y") }}</time>
+        {% if page.taxonomies.tags %}
+        <span class="blog-entry-tags">
+          {% for tag_name in page.taxonomies.tags %}
+            {% set _tag = get_taxonomy_term(kind="tags", term=tag_name) %}
+            <a href="{{ _tag.permalink | safe }}" class="tag-chip">{{ _tag.name }}</a>
+          {% endfor %}
+        </span>
         {% endif %}
-        <span class="read-more">Read article →</span>
-      </a>
+      </div>
+      <h2 class="blog-entry-title">
+        <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+      </h2>
+      {% if page.description %}
+        <p class="blog-entry-excerpt">{{ page.description }}</p>
+      {% elif page.summary %}
+        <p class="blog-entry-excerpt">{{ page.summary }}</p>
+      {% endif %}
+      <a href="{{ page.permalink | safe }}" class="blog-entry-more">Read →</a>
     </article>
     {% endfor %}
   </div>

@@ -2,6 +2,8 @@
 title = "This Week in Slatron v1.1: The Ghost in the Machine"
 description = "Putting a voice inside the box with local ONNX decoding and AI personalities."
 date = 2026-01-11
+[taxonomies]
+tags = ["systems"]
 +++
 
 In my [last post](/blog/introducing-slatron), I talked about how I built Slatron to be the robust, distributed system I always wanted. It was stable. It was efficient. It played video files perfectly.

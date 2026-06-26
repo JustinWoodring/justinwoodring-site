@@ -1,27 +1,56 @@
-{% extends "base.html" %} 
-{% block seo %} 
-<meta name="og:site_name" content="Justin Woodring"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="{{ page.title }} - Justin Woodring" />
+{% extends "base.html" %}
+{% block seo %}
+<meta name="og:site_name" content="{{ config.extra.author_name }}"/>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ page.title }} — {{ config.extra.author_name }}" />
 <meta property="og:description" content="{{ page.description }}" />
 <meta property='og:url' content='{{ page.permalink | safe }}'/>
+<meta property="article:published_time" content="{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%z') }}">
+{% if page.taxonomies.tags %}
+  {% for tag_name in page.taxonomies.tags %}
+    {% set _tag = get_taxonomy_term(kind="tags", term=tag_name) %}
+    <meta property="article:tag" content="{{ _tag.name }}">
+  {% endfor %}
+{% endif %}
 
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="{{ page.permalink | safe }}">
-<meta property="twitter:title" content="{{ page.title }} - Justin Woodring">
+<meta property="twitter:title" content="{{ page.title }} — {{ config.extra.author_name }}">
 <meta property="twitter:description" content="{{ page.description }}">
 {% if page.extra.image %}
   <meta property="og:image" content="{{ page.extra.image }}" />
   <meta property="twitter:image" content="{{ page.extra.image }}">
 {% endif %}
 {% endblock seo %}
-{% block title %} {{ page.title }} - Blog - {%
-endblock title %} {% block primary_content %}
-<section class="content-section">
-  <div class="page-banner">
-    <h1>{{ page.title }}</h1>
-    <div class="banner-subtitle">{{ page.date }}</div>
-  </div>
-  {{page.content | safe}}
+{% block title %}{{ page.title }} — Writing — {% endblock title %}
+{% block primary_content %}
+<section class="page">
+  <header class="page-header page-header-post">
+    <h1 class="page-title">{{ page.title }}</h1>
+    <div class="page-sub">
+      <time>{{ page.date | date(format="%B %d, %Y") }}</time>
+      {% if page.taxonomies.tags %}
+        ·
+        <span class="post-tags">
+          {% for tag_name in page.taxonomies.tags %}
+            {% set _tag = get_taxonomy_term(kind="tags", term=tag_name) %}
+            <a href="{{ _tag.permalink | safe }}" class="tag-chip">{{ _tag.name }}</a>
+          {% endfor %}
+        </span>
+      {% endif %}
+    </div>
+    {% if page.description %}
+      <p class="page-lede">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <article class="content-section">
+    {{ page.content | safe }}
+  </article>
+
+  <nav class="post-nav">
+    <a href="{{ get_url(path='@/blog/_index.md') }}">← All writing</a>
+    <a href="{{ config.base_url }}">Home</a>
+  </nav>
 </section>
 {% endblock primary_content %}

@@ -9,28 +9,24 @@ This page is a snapshot of where my attention actually sits this quarter. Inspir
 
 ## Right now
 
-**Doctoral research.** Wrapping the next round of QATT&CK work — extending the framework beyond utility-scale threat models toward hybrid classical-quantum adversarial pipelines, and writing up the formal mappings to MITRE ATT&CK enterprise techniques.
+**aipolctl.** Building out a Rust implementation of the *Policed Agency* architecture I sketched on the blog — capability-gated IAM for AI agents, multi-tier escalation (Tier 1 executor, Tier 2 guardian, Tier 3 escalation), and an asymmetric communication protocol that keeps the safety layer from being tainted by the executor. The point isn't to write more policy prose; it's to make compliance the only viable path for an agent's optimization, with humans as the accountable party.
 
-**Agent governance.** Continuing the *Policed Agency* thread: capability-gated IAM for AI agents, multi-tier escalation, and a concrete policy-engine prototype that treats agents like employees rather than root users. The goal is to make autonomy *defensible*, not just possible.
+**AutopilotV.** Continuing the desktop orchestrator — adding more tracker and forge adapters, hardening the review sandbox, and tightening the dev-lifecycle state machine. Pi is a first-class harness in there; I dogfood it daily.
 
-**Autonomous software production.** Quietly building toward agile software dark factories — orchestration layers that can take a specification and ship software with minimal human touchpoints, while keeping the human accountable. This is the long game.
-
-**Rust.** Still the language I reach for. Currently extending Slatron's orchestration runtime with a more honest scheduling model; considering a public breakdown post once it's stable enough to be useful rather than aspirational.
+**QATT&CK research.** Extending the framework beyond the initial utility-scale threat model — hybrid classical-quantum adversarial pipelines, formal mappings to MITRE ATT&CK enterprise techniques, and active conference submissions on the work.
 
 ## What I'm not doing (right now)
 
-- Conference submissions for their own sake. If a venue matches the work, I'll send it; otherwise, I'd rather write here.
+- New open-source projects I don't have time to actually maintain. The list above is the list.
 - "AI agent" demos that lean on prompt cleverness instead of architecture. The interesting work is in the seams.
-- Open-source projects I'm not using. Every repo I keep open is one I actually run.
+- Hyping anything. The state of the art is what it is.
 
-## Currently reading / re-reading
+## Currently reading
 
-- The literature on capability-based security (KeyKOS, E, Capsicum) — modern agent architectures keep rediscovering 1970s operating systems.
-- *Structure and Interpretation of Computer Programs* — for the third time, deliberately.
-- Bashō's *Narrow Road to the Deep North*. Not for the content. For the discipline of removing what's unnecessary.
+*Don Quixote*, by Cervantes. Slowly, the way the book deserves.
 
 ## How to reach me
 
-- Email: [hello@justinwoodring.com](mailto:hello@justinwoodring.com) (forwarded from gmail)
+- Email: [jwoodrg@gmail.com](mailto:jwoodrg@gmail.com)
 - For research collaboration, include "research" in the subject.
 - For anything urgent, just say so plainly.

@@ -1,4 +1,4 @@
-Contact: mailto:hello@justinwoodring.com
+Contact: mailto:jwoodrg@gmail.com
 Contact: https://github.com/JustinWoodring
 Encryption: https://justinwoodring.com/assets/pgp.asc
 Preferred-Languages: en

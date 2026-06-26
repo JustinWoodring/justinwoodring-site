@@ -240,6 +240,17 @@ main {
   }
 }
 
+.hero-portrait {
+  display: block;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--ink-line-strong);
+  margin: 0 0 2rem;
+  filter: grayscale(0.15) contrast(1.02);
+}
+
 .hero-name {
   font-family: var(--font-ui);
   font-weight: 700;

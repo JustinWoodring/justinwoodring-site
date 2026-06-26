@@ -36,8 +36,7 @@ This is what's actually on the desk. The page exists because I'd rather you judg
 
 ## Influence
 
-- **Judo and Iaido.** I appreciate both.
-- **Isaac Asimov.** Foundation for what it says about humanity and empire at civilizational scale. The Robot stories and Three Laws for what they say about autonomous agents and the engineering of ethics into systems that have to keep humans accountable. Both halves matter; the second half is why my research reads the way it does.
+I value pragmatism and tacit knowledge, along with Asimov, Judo, and Iaido.
 
 ## What I've stopped using
 

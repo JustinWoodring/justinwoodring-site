@@ -107,11 +107,24 @@
   <div class="project-grid">
     <article class="project">
       <header class="project-head">
-        <span class="project-tag">Distributed Systems / Rust / ONNX</span>
+        <span class="project-tag">Electron / TypeScript / React</span>
+        <h3>AutopilotV</h3>
+      </header>
+      <p>
+        A single-user desktop orchestrator that runs coding-agent CLIs through PR review and software-development lifecycles with deterministic bookkeeping and human-gated approvals.
+      </p>
+      <footer class="project-foot">
+        <a href="https://github.com/Justinwoodring/autopilotv" target="_blank" rel="noopener"><ion-icon name="logo-github"></ion-icon> Source</a>
+      </footer>
+    </article>
+
+    <article class="project">
+      <header class="project-head">
+        <span class="project-tag">Distributed Systems / Rust</span>
         <h3>Slatron</h3>
       </header>
       <p>
-        Intelligent TV station manager with adaptive AI hosts and distributed playback for DIY TV stations, radio, and digital signage. Multi-provider AI DJs (Gemini, Claude, OpenAI, Ollama, local Orpheus), dynamic bumpers and station branding, spot reels, role-based access, Rhai scripting, and resilient local-cached playback. Nightly cross-architecture builds ship single self-contained binaries.
+        A distributed TV station and digital signage platform with adaptive AI DJs and edge-cached playback nodes.
       </p>
       <footer class="project-foot">
         <a href="https://github.com/JustinWoodring/slatron/" target="_blank" rel="noopener"><ion-icon name="logo-github"></ion-icon> Source</a>
@@ -125,7 +138,7 @@
         <h3>Capibara</h3>
       </header>
       <p>
-        Crowd-sourced C library documentation and editor plugins (VS Code, Vim, Emacs). CAPI holds the human-editable YAML; Capibara Processor validates cross-references and emits a single JSON; the web API and frontend distribute it. The web layer is now Rust.
+        Crowd-sourced C library documentation delivered as JSON, with editor plugins for VS Code, Vim, and Emacs.
       </p>
       <footer class="project-foot">
         <a href="https://capibara.tools/" target="_blank" rel="noopener"><ion-icon name="code-slash-outline"></ion-icon> capibara.tools</a>
@@ -139,7 +152,7 @@
         <h3>Lorefire</h3>
       </header>
       <p>
-        Local-first chronicle for D&amp;D 5e campaigns. Record sessions at the table, transcribe locally with WhisperX, generate AI bardic summaries in epic prose, track characters and encounters, manage NPCs, and chat with an Oracle that has full campaign context. No cloud required. Built with NativePHP, Laravel 12, React, and Inertia.js.
+        A local-first D&amp;D 5e campaign chronicle with local transcription, AI bardic summaries, and full character/encounter/NPC tracking.
       </p>
       <footer class="project-foot">
         <a href="https://github.com/JustinWoodring/lorefire/" target="_blank" rel="noopener"><ion-icon name="logo-github"></ion-icon> Source</a>
@@ -152,7 +165,7 @@
         <h3>Qubit Simulator</h3>
       </header>
       <p>
-        Interactive 3D Bloch sphere visualization of single-qubit gate transforms — Hadamard, Pauli X/Y/Z, S, T — with animations that show how each gate moves probability amplitude. The kind of tool I wished I'd had when I was starting out.
+        An interactive 3D Bloch sphere visualization for single-qubit gate transforms.
       </p>
       <footer class="project-foot">
         <a href="https://justinwoodring.com/qubit-simulator/" target="_blank" rel="noopener"><ion-icon name="cube-outline"></ion-icon> Live demo</a>
@@ -161,24 +174,11 @@
 
     <article class="project">
       <header class="project-head">
-        <span class="project-tag">Electron / TypeScript / React / Rust</span>
-        <h3>AutopilotV</h3>
-      </header>
-      <p>
-        Single-user desktop orchestrator (Electron + TypeScript) that runs two lanes in parallel: <strong>PR review</strong> in a sandboxed worktree that physically cannot push or call <code>gh</code>, and <strong>software development</strong> through a full task lifecycle (claim → implement → draft PR → shepherd to ready-to-merge). Pluggable adapters for trackers (Jira, GitHub Projects, Vikunja, Azure DevOps Boards), forges (GitHub, Azure DevOps), and harnesses (Claude, Codex, Cursor, OpenCode, <strong>pi</strong>). The brain is a deterministic poll loop; LLMs are called only for judgment; PR approval and merge are always an explicit human click.
-      </p>
-      <footer class="project-foot">
-        <a href="https://github.com/Justinwoodring/autopilotv" target="_blank" rel="noopener"><ion-icon name="logo-github"></ion-icon> Source</a>
-      </footer>
-    </article>
-
-    <article class="project">
-      <header class="project-head">
-        <span class="project-tag">Agent Governance / Rust</span>
+        <span class="project-tag">Agent Governance</span>
         <h3>aipolctl</h3>
       </header>
       <p>
-        Rust implementation of the <em>Policed Agency</em> architecture: a capability-gated policy engine for AI agents, with multi-tier escalation (executor → guardian → human) and an asymmetric communication protocol that prevents the executor from tainting the safety layer. Treats agents like employees, not root users.
+        An implementation of the <em>Policed Agency</em> architecture for AI agent governance — capability-gated IAM, multi-tier escalation, and asymmetric trust protocols.
       </p>
       <footer class="project-foot">
         <span class="muted"><ion-icon name="lock-closed-outline"></ion-icon> No public repo yet</span>
